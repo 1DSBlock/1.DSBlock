@@ -36,13 +36,13 @@ a. Config virtualhost
 		    ErrorLog "<path>/1.DSBlock/logs/mysite.local-error_log"
 		</VirtualHost>
    ```
-   Notes: <path> The obsolute path of your source code
+   Notes: **<path>** The obsolute path of your source code
 
 b. open /etc/hosts. Add 127.0.0.1 dsblock.local
 
-c. open php.ini. Find ;extension=php_intl.dll. change to extension=php_intl.dll
+c. open php.ini. Find ;extension=php\_intl.dll. change to extension=php\_intl.dll
 
-d. download php_intl.dll from https://www.dll-files.com/php_intl.dll.html. Move this file to xampp/php/ext/
+d. download php\_intl.dll from https://www.dll-files.com/php_intl.dll.html. Move this file to xampp/php/ext/
 
 e. Create database
 - Open http://localhost/phpmyadmin
