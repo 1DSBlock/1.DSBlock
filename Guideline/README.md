@@ -25,15 +25,15 @@ a. Config virtualhost
 		
 		<VirtualHost *:80>
 		    ServerName dsblock.local
-		    DocumentRoot "<path>/1.DSBlock"
-		    <Directory "<path>/1.DSBlock">
+		    DocumentRoot "<path>/1.DSBlock/Source"
+		    <Directory "<path>/1.DSBlock/Source">
 		        Options Indexes FollowSymLinks Includes ExecCGI
 		        AllowOverride All
 		        Require all granted
 		        Order Allow,Deny
 		        Allow from all
 		    </Directory>
-		    ErrorLog "<path>/1.DSBlock/logs/mysite.local-error_log"
+		    ErrorLog "<path>/1.DSBlock/Source/logs/mysite.local-error_log"
 		</VirtualHost>
    ```
    Notes: **<path>** The obsolute path of your source code

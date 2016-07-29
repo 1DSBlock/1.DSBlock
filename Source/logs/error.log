@@ -1,0 +1,1082 @@
+2016-07-29 17:13:01 Warning: Warning (512): /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/tmp/cache/persistent/ is not writable in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Engine/FileEngine.php, line 429]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+Cake\Cache\Engine\FileEngine::_active() - CORE/src/Cache/Engine/FileEngine.php, line 429
+Cake\Cache\Engine\FileEngine::init() - CORE/src/Cache/Engine/FileEngine.php, line 105
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+DebugKit\Cache\Engine\DebugEngine::init() - ROOT/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php, line 79
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\Cache\Cache::_buildEngine() - CORE/src/Cache/Cache.php, line 154
+Cake\Cache\Cache::engine() - CORE/src/Cache/Cache.php, line 190
+Cake\I18n\I18n::translators() - CORE/src/I18n/I18n.php, line 80
+Cake\I18n\I18n::translator() - CORE/src/I18n/I18n.php, line 137
+__d - CORE/src/I18n/functions.php, line 81
+DebugKit\Panel\TimerPanel::DebugKit\Panel\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php, line 54
+Cake\Event\EventManager::_callListener() - CORE/src/Event/EventManager.php, line 407
+Cake\Event\EventManager::dispatch() - CORE/src/Event/EventManager.php, line 373
+Cake\Controller\Controller::dispatchEvent() - CORE/src/Event/EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE/src/Controller/Controller.php, line 491
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-07-29 17:13:01 Error: [RuntimeException] Cache engine Cake\Cache\Engine\FileEngine is not properly configured.
+Request URL: /
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create('Cake\\Cache\\Engi...', 'spies', Array)
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php(79): Cake\Core\ObjectRegistry->load('spies', Array)
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/CacheRegistry.php(89): DebugKit\Cache\Engine\DebugEngine->init(Array)
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create(Object(DebugKit\Cache\Engine\DebugEngine), '_cake_core_', Array)
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(154): Cake\Core\ObjectRegistry->load('_cake_core_', Array)
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(190): Cake\Cache\Cache::_buildEngine('_cake_core_')
+#6 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(80): Cake\Cache\Cache::engine('_cake_core_')
+#7 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(137): Cake\I18n\I18n::translators()
+#8 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/functions.php(81): Cake\I18n\I18n::translator('debug_kit')
+#9 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php(54): __d('debug_kit', 'Controller init...')
+#10 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(407): DebugKit\Panel\TimerPanel->DebugKit\Panel\{closure}(Object(Cake\Event\Event))
+#11 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(373): Cake\Event\EventManager->_callListener(Object(Closure), Object(Cake\Event\Event))
+#12 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#13 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(491): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#14 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(109): Cake\Controller\Controller->startupProcess()
+#15 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#16 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#17 {main}
+
+
+2016-07-29 17:13:04 Warning: Warning (512): /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/tmp/cache/persistent/ is not writable in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Engine/FileEngine.php, line 429]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+Cake\Cache\Engine\FileEngine::_active() - CORE/src/Cache/Engine/FileEngine.php, line 429
+Cake\Cache\Engine\FileEngine::init() - CORE/src/Cache/Engine/FileEngine.php, line 105
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+DebugKit\Cache\Engine\DebugEngine::init() - ROOT/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php, line 79
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\Cache\Cache::_buildEngine() - CORE/src/Cache/Cache.php, line 154
+Cake\Cache\Cache::engine() - CORE/src/Cache/Cache.php, line 190
+Cake\I18n\I18n::translators() - CORE/src/I18n/I18n.php, line 80
+Cake\I18n\I18n::translator() - CORE/src/I18n/I18n.php, line 137
+__d - CORE/src/I18n/functions.php, line 81
+DebugKit\Panel\TimerPanel::DebugKit\Panel\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php, line 54
+Cake\Event\EventManager::_callListener() - CORE/src/Event/EventManager.php, line 407
+Cake\Event\EventManager::dispatch() - CORE/src/Event/EventManager.php, line 373
+Cake\Controller\Controller::dispatchEvent() - CORE/src/Event/EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE/src/Controller/Controller.php, line 491
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-07-29 17:13:04 Error: [RuntimeException] Cache engine Cake\Cache\Engine\FileEngine is not properly configured.
+Request URL: /
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create('Cake\\Cache\\Engi...', 'spies', Array)
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php(79): Cake\Core\ObjectRegistry->load('spies', Array)
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/CacheRegistry.php(89): DebugKit\Cache\Engine\DebugEngine->init(Array)
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create(Object(DebugKit\Cache\Engine\DebugEngine), '_cake_core_', Array)
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(154): Cake\Core\ObjectRegistry->load('_cake_core_', Array)
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(190): Cake\Cache\Cache::_buildEngine('_cake_core_')
+#6 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(80): Cake\Cache\Cache::engine('_cake_core_')
+#7 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(137): Cake\I18n\I18n::translators()
+#8 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/functions.php(81): Cake\I18n\I18n::translator('debug_kit')
+#9 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php(54): __d('debug_kit', 'Controller init...')
+#10 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(407): DebugKit\Panel\TimerPanel->DebugKit\Panel\{closure}(Object(Cake\Event\Event))
+#11 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(373): Cake\Event\EventManager->_callListener(Object(Closure), Object(Cake\Event\Event))
+#12 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#13 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(491): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#14 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(109): Cake\Controller\Controller->startupProcess()
+#15 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#16 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#17 {main}
+
+
+2016-07-29 17:13:31 Warning: Warning (512): /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/tmp/cache/persistent/ is not writable in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Engine/FileEngine.php, line 429]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+Cake\Cache\Engine\FileEngine::_active() - CORE/src/Cache/Engine/FileEngine.php, line 429
+Cake\Cache\Engine\FileEngine::init() - CORE/src/Cache/Engine/FileEngine.php, line 105
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+DebugKit\Cache\Engine\DebugEngine::init() - ROOT/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php, line 79
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\Cache\Cache::_buildEngine() - CORE/src/Cache/Cache.php, line 154
+Cake\Cache\Cache::engine() - CORE/src/Cache/Cache.php, line 190
+Cake\I18n\I18n::translators() - CORE/src/I18n/I18n.php, line 80
+Cake\I18n\I18n::translator() - CORE/src/I18n/I18n.php, line 137
+__d - CORE/src/I18n/functions.php, line 81
+DebugKit\Panel\TimerPanel::DebugKit\Panel\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php, line 54
+Cake\Event\EventManager::_callListener() - CORE/src/Event/EventManager.php, line 407
+Cake\Event\EventManager::dispatch() - CORE/src/Event/EventManager.php, line 373
+Cake\Controller\Controller::dispatchEvent() - CORE/src/Event/EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE/src/Controller/Controller.php, line 491
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-07-29 17:13:32 Warning: Warning (512): /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/tmp/cache/models/ is not writable in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Engine/FileEngine.php, line 429]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+Cake\Cache\Engine\FileEngine::_active() - CORE/src/Cache/Engine/FileEngine.php, line 429
+Cake\Cache\Engine\FileEngine::init() - CORE/src/Cache/Engine/FileEngine.php, line 105
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+DebugKit\Cache\Engine\DebugEngine::init() - ROOT/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php, line 79
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\Cache\Cache::_buildEngine() - CORE/src/Cache/Cache.php, line 154
+Cake\Cache\Cache::engine() - CORE/src/Cache/Cache.php, line 190
+Cake\Cache\Cache::read() - CORE/src/Cache/Cache.php, line 315
+Cake\Database\Schema\CachedCollection::describe() - CORE/src/Database/Schema/CachedCollection.php, line 58
+Cake\ORM\Table::schema() - CORE/src/ORM/Table.php, line 430
+Cake\ORM\Association::property() - CORE/src/ORM/Association.php, line 441
+Cake\ORM\Marshaller::_buildPropertyMap() - CORE/src/ORM/Marshaller.php, line 79
+Cake\ORM\Marshaller::one() - CORE/src/ORM/Marshaller.php, line 119
+Cake\ORM\Table::newEntity() - CORE/src/ORM/Table.php, line 2074
+DebugKit\Routing\Filter\DebugBarFilter::afterDispatch() - ROOT/vendor/cakephp/debug_kit/src/Routing/Filter/DebugBarFilter.php, line 189
+Cake\Event\EventManager::_callListener() - CORE/src/Event/EventManager.php, line 411
+Cake\Event\EventManager::dispatch() - CORE/src/Event/EventManager.php, line 373
+Cake\Routing\Dispatcher::dispatchEvent() - CORE/src/Event/EventDispatcherTrait.php, line 78
+Cake\Error\ExceptionRenderer::_shutdown() - CORE/src/Error/ExceptionRenderer.php, line 376
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE/src/Error/ExceptionRenderer.php, line 321
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE/src/Error/ExceptionRenderer.php, line 327
+Cake\Error\ExceptionRenderer::render() - CORE/src/Error/ExceptionRenderer.php, line 192
+Cake\Error\ErrorHandler::_displayException() - CORE/src/Error/ErrorHandler.php, line 144
+Cake\Error\BaseErrorHandler::handleException() - CORE/src/Error/BaseErrorHandler.php, line 179
+Cake\Error\BaseErrorHandler::wrapAndHandleException() - CORE/src/Error/BaseErrorHandler.php, line 163
+[main] - [internal], line ??
+
+
+
+2016-07-29 17:13:32 Error: [RuntimeException] Cache engine Cake\Cache\Engine\FileEngine is not properly configured.
+Request URL: /
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create('Cake\\Cache\\Engi...', 'spies', Array)
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php(79): Cake\Core\ObjectRegistry->load('spies', Array)
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/CacheRegistry.php(89): DebugKit\Cache\Engine\DebugEngine->init(Array)
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create(Object(DebugKit\Cache\Engine\DebugEngine), '_cake_core_', Array)
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(154): Cake\Core\ObjectRegistry->load('_cake_core_', Array)
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(190): Cake\Cache\Cache::_buildEngine('_cake_core_')
+#6 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(80): Cake\Cache\Cache::engine('_cake_core_')
+#7 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(137): Cake\I18n\I18n::translators()
+#8 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/functions.php(81): Cake\I18n\I18n::translator('debug_kit')
+#9 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php(54): __d('debug_kit', 'Controller init...')
+#10 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(407): DebugKit\Panel\TimerPanel->DebugKit\Panel\{closure}(Object(Cake\Event\Event))
+#11 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(373): Cake\Event\EventManager->_callListener(Object(Closure), Object(Cake\Event\Event))
+#12 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#13 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(491): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#14 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(109): Cake\Controller\Controller->startupProcess()
+#15 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#16 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#17 {main}
+
+
+2016-07-29 17:13:45 Warning: Warning (512): /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/tmp/cache/persistent/ is not writable in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Engine/FileEngine.php, line 429]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+Cake\Cache\Engine\FileEngine::_active() - CORE/src/Cache/Engine/FileEngine.php, line 429
+Cake\Cache\Engine\FileEngine::init() - CORE/src/Cache/Engine/FileEngine.php, line 105
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+DebugKit\Cache\Engine\DebugEngine::init() - ROOT/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php, line 79
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\Cache\Cache::_buildEngine() - CORE/src/Cache/Cache.php, line 154
+Cake\Cache\Cache::engine() - CORE/src/Cache/Cache.php, line 190
+Cake\I18n\I18n::translators() - CORE/src/I18n/I18n.php, line 80
+Cake\I18n\I18n::translator() - CORE/src/I18n/I18n.php, line 137
+__d - CORE/src/I18n/functions.php, line 81
+DebugKit\Panel\TimerPanel::DebugKit\Panel\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php, line 54
+Cake\Event\EventManager::_callListener() - CORE/src/Event/EventManager.php, line 407
+Cake\Event\EventManager::dispatch() - CORE/src/Event/EventManager.php, line 373
+Cake\Controller\Controller::dispatchEvent() - CORE/src/Event/EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE/src/Controller/Controller.php, line 491
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-07-29 17:13:45 Warning: Warning (512): /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/tmp/cache/models/ is not writable in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Engine/FileEngine.php, line 429]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+Cake\Cache\Engine\FileEngine::_active() - CORE/src/Cache/Engine/FileEngine.php, line 429
+Cake\Cache\Engine\FileEngine::init() - CORE/src/Cache/Engine/FileEngine.php, line 105
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+DebugKit\Cache\Engine\DebugEngine::init() - ROOT/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php, line 79
+Cake\Cache\CacheRegistry::_create() - CORE/src/Cache/CacheRegistry.php, line 89
+Cake\Core\ObjectRegistry::load() - CORE/src/Core/ObjectRegistry.php, line 93
+Cake\Cache\Cache::_buildEngine() - CORE/src/Cache/Cache.php, line 154
+Cake\Cache\Cache::engine() - CORE/src/Cache/Cache.php, line 190
+Cake\Cache\Cache::read() - CORE/src/Cache/Cache.php, line 315
+Cake\Database\Schema\CachedCollection::describe() - CORE/src/Database/Schema/CachedCollection.php, line 58
+Cake\ORM\Table::schema() - CORE/src/ORM/Table.php, line 430
+Cake\ORM\Association::property() - CORE/src/ORM/Association.php, line 441
+Cake\ORM\Marshaller::_buildPropertyMap() - CORE/src/ORM/Marshaller.php, line 79
+Cake\ORM\Marshaller::one() - CORE/src/ORM/Marshaller.php, line 119
+Cake\ORM\Table::newEntity() - CORE/src/ORM/Table.php, line 2074
+DebugKit\Routing\Filter\DebugBarFilter::afterDispatch() - ROOT/vendor/cakephp/debug_kit/src/Routing/Filter/DebugBarFilter.php, line 189
+Cake\Event\EventManager::_callListener() - CORE/src/Event/EventManager.php, line 411
+Cake\Event\EventManager::dispatch() - CORE/src/Event/EventManager.php, line 373
+Cake\Routing\Dispatcher::dispatchEvent() - CORE/src/Event/EventDispatcherTrait.php, line 78
+Cake\Error\ExceptionRenderer::_shutdown() - CORE/src/Error/ExceptionRenderer.php, line 376
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE/src/Error/ExceptionRenderer.php, line 321
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE/src/Error/ExceptionRenderer.php, line 327
+Cake\Error\ExceptionRenderer::render() - CORE/src/Error/ExceptionRenderer.php, line 192
+Cake\Error\ErrorHandler::_displayException() - CORE/src/Error/ErrorHandler.php, line 144
+Cake\Error\BaseErrorHandler::handleException() - CORE/src/Error/BaseErrorHandler.php, line 179
+Cake\Error\BaseErrorHandler::wrapAndHandleException() - CORE/src/Error/BaseErrorHandler.php, line 163
+[main] - [internal], line ??
+
+
+
+2016-07-29 17:13:45 Error: [RuntimeException] Cache engine Cake\Cache\Engine\FileEngine is not properly configured.
+Request URL: /
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create('Cake\\Cache\\Engi...', 'spies', Array)
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Cache/Engine/DebugEngine.php(79): Cake\Core\ObjectRegistry->load('spies', Array)
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/CacheRegistry.php(89): DebugKit\Cache\Engine\DebugEngine->init(Array)
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(93): Cake\Cache\CacheRegistry->_create(Object(DebugKit\Cache\Engine\DebugEngine), '_cake_core_', Array)
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(154): Cake\Core\ObjectRegistry->load('_cake_core_', Array)
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Cache/Cache.php(190): Cake\Cache\Cache::_buildEngine('_cake_core_')
+#6 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(80): Cake\Cache\Cache::engine('_cake_core_')
+#7 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/I18n.php(137): Cake\I18n\I18n::translators()
+#8 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/I18n/functions.php(81): Cake\I18n\I18n::translator('debug_kit')
+#9 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/debug_kit/src/Panel/TimerPanel.php(54): __d('debug_kit', 'Controller init...')
+#10 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(407): DebugKit\Panel\TimerPanel->DebugKit\Panel\{closure}(Object(Cake\Event\Event))
+#11 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventManager.php(373): Cake\Event\EventManager->_callListener(Object(Closure), Object(Cake\Event\Event))
+#12 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#13 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(491): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#14 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(109): Cake\Controller\Controller->startupProcess()
+#15 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#16 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#17 {main}
+
+
+2016-07-29 17:14:05 Error: Fatal Error (1): Class 'App\Controller\System\AppAdminController' not found in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/src/Controller/Admin/UsersController.php, line 5]
+Request URL: /admin
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 215
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2016-07-29 17:14:05 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\System\AppAdminController' not found
+Request URL: /admin
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/Volumes/Data/W...', 5)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-07-29 17:14:25 Error: Fatal Error (1): Class 'App\Controller\Admin\AppAdminController' not found in [/Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/src/Controller/Admin/UsersController.php, line 5]
+Request URL: /admin
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 215
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2016-07-29 17:14:25 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\Admin\AppAdminController' not found
+Request URL: /admin
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/Volumes/Data/W...', 5)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-07-29 17:16:17 Error: [Cake\View\Exception\MissingHelperException] Helper class CfHelper could not be found.
+Exception Attributes: array (
+  'class' => 'CfHelper',
+  'plugin' => NULL,
+)
+Request URL: /admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Cf', NULL)
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(1026): Cake\Core\ObjectRegistry->load('Cf', Array)
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(929): Cake\View\View->loadHelper('Cf', Array)
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(345): Cake\View\View->loadHelpers()
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/ViewBuilder.php(351): Cake\View\View->__construct(Object(Cake\Network\Request), Object(Cake\Network\Response), Object(Cake\Event\EventManager), Array)
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/ViewVarsTrait.php(118): Cake\View\ViewBuilder->build(Array, Object(Cake\Network\Request), Object(Cake\Network\Response), Object(Cake\Event\EventManager))
+#6 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(610): Cake\Controller\Controller->createView()
+#7 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#8 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#9 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2016-07-29 17:16:26 Error: [Cake\View\Exception\MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => NULL,
+)
+Request URL: /admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Auth', NULL)
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(1026): Cake\Core\ObjectRegistry->load('Auth', Array)
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(929): Cake\View\View->loadHelper('Auth', Array)
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(345): Cake\View\View->loadHelpers()
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/ViewBuilder.php(351): Cake\View\View->__construct(Object(Cake\Network\Request), Object(Cake\Network\Response), Object(Cake\Event\EventManager), Array)
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/ViewVarsTrait.php(118): Cake\View\ViewBuilder->build(Array, Object(Cake\Network\Request), Object(Cake\Network\Response), Object(Cake\Event\EventManager))
+#6 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(610): Cake\Controller\Controller->createView()
+#7 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#8 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#9 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2016-07-29 17:16:34 Error: [Cake\View\Exception\MissingElementException] Element/Flash/ec_message.ctp
+Request URL: /admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/Helper/FlashHelper.php(89): Cake\View\View->element('Flash/ec_messag...', Array)
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/src/Template/Admin/Layout/default.ctp(50): Cake\View\Helper\FlashHelper->render()
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(995): include('/Volumes/Data/W...')
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(955): Cake\View\View->_evaluate('/Volumes/Data/W...', Array)
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(633): Cake\View\View->_render('/Volumes/Data/W...')
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(592): Cake\View\View->renderLayout('', 'default')
+#6 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#7 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#8 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#9 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2016-07-29 17:16:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/js/bootstrap.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/icheck.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Dist could not be found.
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /dist/css/AdminLTE.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/square/blue.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/jQuery/jquery-2.2.3.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/css/bootstrap.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/css/bootstrap.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Dist could not be found.
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /dist/css/AdminLTE.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/square/blue.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/js/bootstrap.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/jQuery/jquery-2.2.3.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/icheck.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:16:55 Error: [Cake\View\Exception\MissingLayoutException] Layout file "Admin/Layout/system_default.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Admin/Layout/system_default.ctp',
+)
+Request URL: /admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(615): Cake\View\View->_getLayoutFileName('system_default')
+#1 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/View/View.php(592): Cake\View\View->renderLayout('', 'system_default')
+#2 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#3 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#4 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#5 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2016-07-29 17:17:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Dist could not be found.
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /dist/css/AdminLTE.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/jQuery/jquery-2.2.3.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/js/bootstrap.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/icheck.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/css/bootstrap.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/square/blue.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/square/blue.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/icheck.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/js/bootstrap.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Dist could not be found.
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /dist/css/AdminLTE.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/css/bootstrap.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:17:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/jQuery/jquery-2.2.3.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/css/bootstrap.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Dist could not be found.
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /dist/css/AdminLTE.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/jQuery/jquery-2.2.3.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/js/bootstrap.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/square/blue.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/icheck.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /js/system/plugins/jQuery/jquery-2.2.3.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /js/system/bootstrap/js/bootstrap.min..js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:19:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /js/system/plugins/iCheck/icheck.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/square/blue.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/css/bootstrap.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/jQuery/jquery-2.2.3.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Dist could not be found.
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /dist/css/AdminLTE.min.css
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/iCheck/icheck.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Bootstrap could not be found.
+Exception Attributes: array (
+  'class' => 'Bootstrap',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /bootstrap/js/bootstrap.min.js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class System could not be found.
+Exception Attributes: array (
+  'class' => 'System',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /system/bootstrap/js/bootstrap.min..js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:20:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Plugins could not be found.
+Exception Attributes: array (
+  'class' => 'Plugins',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /plugins/jQuery/jquery-2.2.3.min.js
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:22:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class System could not be found.
+Exception Attributes: array (
+  'class' => 'System',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /system/bootstrap/js/bootstrap.min..js
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:22:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Index2.html could not be found.
+Exception Attributes: array (
+  'class' => 'Index2.html',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /index2.html
+Referer URL: http://dsblock.local/admin?system=1
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:22:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class System could not be found.
+Exception Attributes: array (
+  'class' => 'System',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /system/bootstrap/js/bootstrap.min..js
+Referer URL: http://dsblock.local/admin
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:22:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class System could not be found.
+Exception Attributes: array (
+  'class' => 'System',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /system/bootstrap/js/bootstrap.min..js
+Referer URL: http://dsblock.local/admin
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-07-29 17:22:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class System could not be found.
+Exception Attributes: array (
+  'class' => 'System',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /system/bootstrap/js/bootstrap.min..js
+Referer URL: http://dsblock.local/admin
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /Volumes/Data/Wind/sources/duyanh/1.DSBlock/Source/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
