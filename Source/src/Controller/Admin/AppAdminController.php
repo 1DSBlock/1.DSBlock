@@ -11,9 +11,14 @@ use App\Lib\Utils;
 
 class AppAdminController extends Controller
 {
+    use CrudTrait;
     use CommonTrait;
     
     protected $utils;
+    
+    public $paginate = [
+        'limit' => PAGINATE_LIMIT,
+    ];
     
     public $helpers = ['Html', 'Form'];
     public $components = ['Auth', 'RequestHandler', 'Cookie'];
@@ -30,10 +35,11 @@ class AppAdminController extends Controller
         parent::initialize();
         $this->loadComponent('Flash');
         $this->loadComponent('Csrf');
+        $this->loadComponent('Paginator');
 
-        $this->viewBuilder()->layout('default');
+        $this->viewBuilder()->layout('system_default');
         
-        $this->utils = Utils:: getInstance();
+        $this->utils = Utils::getInstance();
     }
 
     /**
