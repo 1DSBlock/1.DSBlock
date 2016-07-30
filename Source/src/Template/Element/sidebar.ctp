@@ -42,9 +42,6 @@
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Articles</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build(['controller' => 'articles', 'action' => 'lists']); ?>"><i class="fa fa-circle-o"></i>Articles Manager</a></li>
@@ -52,11 +49,8 @@
           </ul>
         </li>
         <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
+          <a href="<?php echo $this->Url->build(['controller' => 'forms', 'action' => 'lists']); ?>">
+            <i class="fa fa-edit"></i> <span>Forms</span>
           </a>
         </li>
         <li class="treeview">

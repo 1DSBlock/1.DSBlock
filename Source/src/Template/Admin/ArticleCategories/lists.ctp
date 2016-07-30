@@ -32,13 +32,11 @@
               <table class="table table-hover">
                 <tr>
                   <th>ID</th>
-                  <th>User</th>
-                  <th>Date</th>
-                  <th>Status</th>
+                  <th>Title</th>
                 </tr>
                 <?php if(!$rows->count()) : ?>
                 <tr>
-                  <td colspan="4" align="center">No data</td>
+                  <td colspan="2" align="center">No data</td>
                 </tr>
                 <?php endif;?>
                 <?php
@@ -47,8 +45,6 @@
                 <tr>
                   <td><?= $item->id; ?></td>
                   <td><?= $item->title; ?></td>
-                  <td><?= $item->created; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
                 </tr>
                 <?php endforeach; ?>
               </table>

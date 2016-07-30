@@ -200,6 +200,8 @@ if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
 
+Plugin::load('Proffer');
+
 /**
  * Connect middleware/dispatcher filters.
  */

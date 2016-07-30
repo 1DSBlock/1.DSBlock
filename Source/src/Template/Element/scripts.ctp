@@ -10,7 +10,7 @@ echo $this->Html->script('../system/plugins/jQuery/jquery-2.2.3.min');
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-
+<script src="//rawgit.com/saribe/eModal/master/dist/eModal.min.js"></script>
 <?php 
 // <!-- Bootstrap 3.3.6 -->
 echo $this->Html->script('../system/bootstrap/js/bootstrap.min');
@@ -39,7 +39,8 @@ echo $this->Html->script('../system/plugins/fastclick/fastclick');
 // <!-- AdminLTE App -->
 echo $this->Html->script('../system/dist/js/app.min');
 // <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-echo $this->Html->script('../system/dist/js/pages/dashboard.js');
+// echo $this->Html->script('../system/dist/js/pages/dashboard.js');
 // <!-- AdminLTE for demo purposes -->
 echo $this->Html->script('../system/dist/js/demo.js');
+
 ?>

@@ -16,4 +16,4 @@ class ArticleCategoriesController extends AppAdminController
     {
         parent::beforeFilter($event);
     }
-}
+  }

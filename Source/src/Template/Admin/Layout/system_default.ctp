@@ -45,7 +45,7 @@
   
     
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -64,5 +64,6 @@
 </div>
 <!-- ./wrapper -->
 <?php echo $this->element('scripts'); ?>
+<?= $this->fetch('scriptBottom') ?>
 </body>
 </html>
