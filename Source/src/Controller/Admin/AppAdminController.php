@@ -7,10 +7,13 @@ use Cake\Core\App;
 use Cake\Event\Event;
 use Cake\Log\Log;
 use App\Controller\CommonTrait;
+use App\Lib\Utils;
 
 class AppAdminController extends Controller
 {
     use CommonTrait;
+    
+    protected $utils;
     
     public $helpers = ['Html', 'Form'];
     public $components = ['Auth', 'RequestHandler', 'Cookie'];
@@ -26,12 +29,11 @@ class AppAdminController extends Controller
     {
         parent::initialize();
         $this->loadComponent('Flash');
-        $this->loadComponent('Csrf', [
-               'cookieName' => 'ecToken',
-               'secure' => true
-        ]);
+        $this->loadComponent('Csrf');
 
         $this->viewBuilder()->layout('default');
+        
+        $this->utils = Utils:: getInstance();
     }
 
     /**
@@ -66,27 +68,39 @@ class AppAdminController extends Controller
     protected function configureAuth()
     {
         $adminAuth = [
-                'authenticate' => [
-                    AuthComponent::ALL => [
-                        'fields' => ['username' => 'email', 'password' => 'password'],
-                        'scope' => ['SystemUsers.active' => 1],
-                        'userModel' => 'SystemUsers'
-                    ],
-                    'Form' => [
-                        'passwordHasher' => [
-                            'className' => 'Weak',
-                            'hashType' => 'sha256'
-                        ]
+            'authorize' => ['Controller'],
+            'authenticate' => [
+                AuthComponent::ALL => [
+                    'fields' => ['username' => 'email', 'password' => 'password'],
+                    'scope' => ['SystemUsers.active' => 1],
+                    'userModel' => 'SystemUsers'
+                ],
+                'Form' => [
+                    'passwordHasher' => [
+                        'className' => 'Weak',
+                        'hashType' => 'sha256'
                     ]
-                ],
-                'loginAction' => ['system' => true, 'controller' => 'users', 'action' => 'login'],
-                'loginRedirect' => ['action' => 'dashboard'],
-                'flash' => [
-                    'element' => 'ec_message'
-                ],
-                'authError' => __('Your session has ended. Please log back in.')
-            ];
+                ]
+            ],
+            'loginAction' => ['admin' => true, 'controller' => 'users', 'action' => 'login'],
+            'loginRedirect' => ['action' => 'dashboard'],
+//                 'flash' => [
+//                     'element' => 'default'
+//                 ],
+            'authError' => __('Your session has ended. Please log back in.')
+        ];
 
         $this->Auth->config($adminAuth);
+    }
+    
+    public function isAuthorized($user)
+    {
+//         // Admin can access every action
+//         if (isset($user['role']) && $user['role'] === 'admin') {
+//             return true;
+//         }
+    
+        // Default deny
+        return true;
     }
 }
