@@ -29,7 +29,7 @@ class FormsTable extends AppTable
         ->add('description', [
             'length' => [
                 'rule' => ['minLength', 5],
-                'message' => 'Titles need to be at least 5 characters long',
+                'message' => 'Description need to be at least 5 characters long',
             ]
         ]);
         $validator->provider('proffer', 'Proffer\Model\Validation\ProfferRules');

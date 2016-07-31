@@ -5,13 +5,15 @@ use Cake\Event\Event;
 
 class UsersController extends AppAdminController
 {
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
         $this->Auth->allow('login');
     }
-    
-    public function login() {
+
+    public function login()
+    {
         $this->viewBuilder()->layout(false);
         
         if ($this->request->is('post')) {
@@ -23,12 +25,12 @@ class UsersController extends AppAdminController
             $this->Flash->error(__('Invalid username or password, try again'));
         }
     }
-    
-    public function logout() {
+
+    public function logout()
+    {
         return $this->redirect($this->Auth->logout());
     }
-    
-    public function dashboard() {
-        
-    }
+
+    public function dashboard()
+    {}
 }

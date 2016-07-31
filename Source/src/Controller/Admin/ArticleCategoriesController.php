@@ -5,15 +5,17 @@ use Cake\Event\Event;
 
 class ArticleCategoriesController extends AppAdminController
 {
+
     public $paginate = [
         'limit' => PAGINATE_LIMIT,
         'order' => [
-            'ArticleCategories.title' => 'asc'
+            'ArticleCategories.id' => 'asc'
         ]
     ];
-    
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
     }
-  }
+    
+}

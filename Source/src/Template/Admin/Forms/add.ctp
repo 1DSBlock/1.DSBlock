@@ -22,7 +22,7 @@ Forms
             <!-- form start -->
             <?php echo $this->Form->create($entity, ['type' => 'file']); ?>
               <div class="box-body">
-                <?php echo $this->Form->input('description', ['type' => 'text', 'placeholder' => 'Description']); ?>
+                <?php echo $this->Form->input('description', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Description']); ?>
 				<?php echo $this->Form->input('filename', ['type' => 'file']); ?>
               </div>
               <!-- /.box-body -->

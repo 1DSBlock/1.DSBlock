@@ -13,15 +13,23 @@ class AppAdminController extends Controller
 {
     use CrudTrait;
     use CommonTrait;
-    
+
     protected $utils;
-    
+
     public $paginate = [
-        'limit' => PAGINATE_LIMIT,
+        'limit' => PAGINATE_LIMIT
     ];
-    
-    public $helpers = ['Html', 'Form'];
-    public $components = ['Auth', 'RequestHandler', 'Cookie'];
+
+    public $helpers = [
+        'Html',
+        'Form'
+    ];
+
+    public $components = [
+        'Auth',
+        'RequestHandler',
+        'Cookie'
+    ];
 
     /**
      * Initialization hook method.
@@ -36,7 +44,7 @@ class AppAdminController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Csrf');
         $this->loadComponent('Paginator');
-
+        
         $this->viewBuilder()->layout('system_default');
         
         $this->utils = Utils::getInstance();
@@ -44,20 +52,22 @@ class AppAdminController extends Controller
 
     /**
      * beforeRender all things need to run before rendering
-     * @param  Event  $event Cake Event
+     * 
+     * @param Event $event
+     *            Cake Event
      * @return void
      */
     public function beforeRender(Event $event)
     {
         parent::beforeRender($event);
-        
     }
 
     /**
      * beforeFilter all things need to run before running an action
-     * @param  Event  $event an cake event
-     * @return \Cake\Network\Response|null
-     * @SuppressWarnings(PHPMD.StaticAccess)
+     * 
+     * @param Event $event
+     *            an cake event
+     * @return \Cake\Network\Response|null @SuppressWarnings(PHPMD.StaticAccess)
      */
     public function beforeFilter(Event $event)
     {
@@ -65,20 +75,26 @@ class AppAdminController extends Controller
         $this->configureAuth();
     }
 
-    
-
     /**
      * configureAuth auth configurations
+     * 
      * @return void
      */
     protected function configureAuth()
     {
         $adminAuth = [
-            'authorize' => ['Controller'],
+            'authorize' => [
+                'Controller'
+            ],
             'authenticate' => [
                 AuthComponent::ALL => [
-                    'fields' => ['username' => 'email', 'password' => 'password'],
-                    'scope' => ['SystemUsers.active' => 1],
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password'
+                    ],
+                    'scope' => [
+                        'SystemUsers.active' => 1
+                    ],
                     'userModel' => 'SystemUsers'
                 ],
                 'Form' => [
@@ -88,24 +104,30 @@ class AppAdminController extends Controller
                     ]
                 ]
             ],
-            'loginAction' => ['admin' => true, 'controller' => 'users', 'action' => 'login'],
-            'loginRedirect' => ['action' => 'dashboard'],
-//                 'flash' => [
-//                     'element' => 'default'
-//                 ],
+            'loginAction' => [
+                'admin' => true,
+                'controller' => 'users',
+                'action' => 'login'
+            ],
+            'loginRedirect' => [
+                'action' => 'dashboard'
+            ],
+            // 'flash' => [
+            // 'element' => 'default'
+            // ],
             'authError' => __('Your session has ended. Please log back in.')
         ];
-
+        
         $this->Auth->config($adminAuth);
     }
-    
+
     public function isAuthorized($user)
     {
-//         // Admin can access every action
-//         if (isset($user['role']) && $user['role'] === 'admin') {
-//             return true;
-//         }
-    
+        // // Admin can access every action
+        // if (isset($user['role']) && $user['role'] === 'admin') {
+        // return true;
+        // }
+        
         // Default deny
         return true;
     }

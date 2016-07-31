@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  
+  <?= $this->fetch('css') ?>
   <!-- Theme style -->
   <?php echo $this->Html->css('../system/dist/css/AdminLTE.min'); ?>
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -41,17 +43,12 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  
-  
-    
-    <?= $this->fetch('css') ?>
-    
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <?php echo $this->element('header'); ?>
-  <?php echo $this->element('sidebar'); ?>
+  <?php echo $this->element('Admin/header'); ?>
+  <?php echo $this->element('Admin/sidebar'); ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -59,11 +56,11 @@
     <?= $this->fetch('content') ?>
   </div>
   <!-- /.content-wrapper -->
-  <?php echo $this->element('footer'); ?>
-  <?php echo $this->element('control-sidebar'); ?>
+  <?php echo $this->element('Admin/footer'); ?>
+  <?php echo $this->element('Admin/control-sidebar'); ?>
 </div>
 <!-- ./wrapper -->
-<?php echo $this->element('scripts'); ?>
+<?php echo $this->element('Admin/scripts'); ?>
 <?= $this->fetch('scriptBottom') ?>
 </body>
 </html>

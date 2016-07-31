@@ -1,3 +1,6 @@
+<?php 
+echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scriptBottom']);
+?>
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -27,16 +30,20 @@
                 </div>
               </div>
             </div>
+            <div class="box-header">
+            <button type="button" class="btn btn-primary" id="addNew">Add +</button>
+            </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
                   <th>ID</th>
                   <th>Title</th>
+                  <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>
                 <tr>
-                  <td colspan="2" align="center">No data</td>
+                  <td colspan="3" align="center">No data</td>
                 </tr>
                 <?php endif;?>
                 <?php
@@ -45,6 +52,10 @@
                 <tr>
                   <td><?= $item->id; ?></td>
                   <td><?= $item->title; ?></td>
+                  <td>
+                  <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>
+                  <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>">Delete</button>
+                  </td>
                 </tr>
                 <?php endforeach; ?>
               </table>
