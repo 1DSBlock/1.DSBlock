@@ -11,7 +11,8 @@ class ArticlesController extends AppAdminController
         'limit' => PAGINATE_LIMIT,
         'order' => [
             'Articles.title' => 'asc'
-        ]
+        ],
+        'contain' => ['ArticleCategories']
     ];
 
     public function beforeFilter(Event $event)

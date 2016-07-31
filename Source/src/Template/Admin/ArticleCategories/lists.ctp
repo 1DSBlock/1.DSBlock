@@ -46,7 +46,7 @@ echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scrip
                   <td colspan="3" align="center">No data</td>
                 </tr>
                 <?php endif;?>
-                <?php
+                <?php 
                 foreach($rows as $item) :
                 ?>
                 <tr>

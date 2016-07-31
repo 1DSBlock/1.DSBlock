@@ -40,6 +40,7 @@ echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scrip
                   <th>ID</th>
                   <th>Title</th>
                   <th>Alias</th>
+                  <th>Category</th>
                   <th>Created</th>
                   <th></th>
                 </tr>
@@ -50,11 +51,16 @@ echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scrip
                 <?php endif;?>
                 <?php
                 foreach($rows as $item) :
+                    $categoryName = '';
+                    if(!empty($item->article_category)) {
+                        $categoryName = $item->article_category->title;
+                    }
                 ?>
                 <tr>
                   <td><?= $item->id; ?></td>
                   <td><?= $item->title; ?></td>
                   <td><?= $item->alias; ?></td>
+                  <td><?= $categoryName; ?></td>
                   <td><?= $item->created; ?></td>
                   <td>
                   <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>
