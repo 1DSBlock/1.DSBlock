@@ -35,6 +35,7 @@ Article Categories
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-default back">Back</button>
               </div>
             <?php echo $this->Form->end();?>
           </div>

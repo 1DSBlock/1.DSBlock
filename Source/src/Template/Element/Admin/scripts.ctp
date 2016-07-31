@@ -43,4 +43,5 @@ echo $this->Html->script('../system/dist/js/app.min');
 // <!-- AdminLTE for demo purposes -->
 echo $this->Html->script('../system/dist/js/demo.js');
 
+echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scriptBottom']);
 ?>

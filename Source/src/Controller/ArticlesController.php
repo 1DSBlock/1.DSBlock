@@ -1,26 +1,30 @@
 <?php
 namespace App\Controller;
 
+use Cake\Event\Event;
+
 class ArticlesController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow('*');
+    }
 
     public function aboutus()
     {
-        $entity = $this->Articles->getAboutUs();
-        $this->set(compact('entity'));
-        exit();
+        $aboutUs = $this->Articles->getAboutUs();
+        $this->set(compact('aboutUs'));
     }
 
     public function introductions()
     {
         $introductions = $this->Articles->getIntroductions();debug($introductions);
         $this->set(compact('introductions'));
-        exit;
     }
     
     public function qanda() {
         $questions = $this->Articles->getQA();
         $this->set(compact('questions'));
-        exit;
     }
 }

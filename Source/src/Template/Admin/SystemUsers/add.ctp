@@ -1,10 +1,5 @@
+
 <!-- Content Header (Page header) -->
-<?php
-$this->Html->scriptBlock('$(function () {
-    //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
-  });', ['block' => 'scriptBottom']);
-?>
 <section class="content-header">
 <h1>
 System Users
@@ -28,13 +23,15 @@ System Users
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-                <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+              	<?php echo $this->Form->input('email', ['class' => 'form-control', 'type' => 'email', 'placeholder' => 'Email']); ?>
+                <?php echo $this->Form->input('password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
+                <?php echo $this->Form->input('confirm-password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-default back">Back</button>
               </div>
             <?php echo $this->Form->end();?>
           </div>

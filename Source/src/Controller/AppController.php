@@ -18,6 +18,8 @@ use Cake\Controller\Controller;
 use Cake\Event\Event;
 use App\Lib\ObjectUtils;
 use App\Lib\Utils;
+use App\Model\Entity\User;
+use Cake\Controller\Component\AuthComponent;
 
 /**
  * Application Controller
@@ -48,6 +50,7 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth');
         
         $this->utils = Utils::getInstance();
         $this->objectUtils = ObjectUtils::getInstance();
@@ -66,5 +69,64 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
+    
+    /**
+     * beforeFilter all things need to run before running an action
+     *
+     * @param Event $event
+     *            an cake event
+     * @return \Cake\Network\Response|null @SuppressWarnings(PHPMD.StaticAccess)
+     */
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->configureAuth();
+    }
+    
+    /**
+     * configureAuth auth configurations
+     *
+     * @return void
+     */
+    protected function configureAuth()
+    {
+        $userAuth = [
+            'authorize' => [
+                'Controller'
+            ],
+                'authenticate' => [
+                    AuthComponent::ALL => [
+                        'fields' => ['username' => 'email', 'password' => 'password'],
+                        'scope' => ['Users.status' => User::STATUS_ACTIVE],
+                        'userModel' => 'Users'
+                    ],
+                    'Form' => [
+                        'passwordHasher' => [
+                            'className' => 'Weak',
+                            'hashType' => 'sha256'
+                        ]
+                    ]
+                ],
+                'loginAction' => ['controller' => 'users', 'action' => 'login'],
+                'loginRedirect' => ['controller' => 'users', 'action' => 'dashboard'],
+//                 'flash' => [
+//                     'element' => 'ec_message'
+//                 ],
+                'authError' => __('Your session has ended. Please log back in.')
+            ];
+    
+        $this->Auth->config($userAuth);
+    }
+    
+    public function isAuthorized($user)
+    {
+        // // Admin can access every action
+        // if (isset($user['role']) && $user['role'] === 'admin') {
+        // return true;
+            // }
+    
+            // Default deny
+            return true;
     }
 }

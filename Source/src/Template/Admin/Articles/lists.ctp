@@ -1,6 +1,3 @@
-<?php 
-echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scriptBottom']);
-?>
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>

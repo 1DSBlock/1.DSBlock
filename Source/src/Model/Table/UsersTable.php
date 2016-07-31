@@ -15,24 +15,36 @@ class UsersTable extends AppTable
     public function validationDefault(Validator $validator) {
         $validator = parent::validationDefault($validator);
     
-//         $validator
-//         ->requirePresence('title')
-//         ->notEmpty('title', 'Please fill this field')
-//         ->add('title', [
-//             'length' => [
-//                 'rule' => ['minLength', 5],
-//                 'message' => 'Titles need to be at least 5 characters long',
-//             ]
-//         ]);
-//         $validator
-//         ->requirePresence('description')
-//         ->notEmpty('description', 'Please fill this field')
-//         ->add('description', [
-//             'length' => [
-//                 'rule' => ['minLength', 5],
-//                 'message' => 'Description need to be at least 5 characters long',
-//             ]
-//         ]);
+        
+        
+        $validator
+        ->requirePresence('email')
+        ->add('email', 'validFormat', [
+            'rule' => 'email',
+            'message' => 'E-mail must be valid'
+        ]);
+        
+        $validator->add('email', [
+            'unique' => [
+                'message'   => 'This value is already used',
+                'provider'  => 'table',
+                'rule'      => 'validateUnique'
+            ]
+        ]);
+        
+        $validator->add('confirm-password', 'no-misspelling', [
+            'rule' => ['compareWith', 'password'],
+            'message' => 'Passwords are not equal',
+        ]);
+        
+        $validator
+        ->notEmpty('password', 'A password is required');
+        $validator->add('password', [
+            'length' => [
+                'rule' => ['minLength', 5],
+                'message' => 'Password need to be at least 5 characters long',
+            ]
+        ]);
         return $validator;
     }
 }

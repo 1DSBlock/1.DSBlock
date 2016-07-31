@@ -1,6 +1,3 @@
-<?php 
-echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scriptBottom']);
-?>
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -18,7 +15,7 @@ echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scrip
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Categories Manager</h3>
+              <h3 class="box-title">System Users Manager</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -38,7 +35,7 @@ echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scrip
               <table class="table table-hover">
                 <tr>
                   <th>ID</th>
-                  <th>Title</th>
+                  <th>Email</th>
                   <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>
@@ -51,7 +48,7 @@ echo $this->Html->script('../system/dist/js/pages/common.js', ['block' => 'scrip
                 ?>
                 <tr>
                   <td><?= $item->id; ?></td>
-                  <td><?= $item->title; ?></td>
+                  <td><?= $item->email; ?></td>
                   <td>
                   <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>
                   <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>">Delete</button>

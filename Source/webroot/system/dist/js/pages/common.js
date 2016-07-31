@@ -1,4 +1,7 @@
 $(function() {
+	// sidebar
+	$('.' + controller).addClass('active');
+	
 	$('#addNew').click(function() {
 		location.href = 'add';
 	});
@@ -17,5 +20,9 @@ $(function() {
 	$('.edit-item').click(function(e) {
 		var id = $(this).data('id');
 		location.href = 'edit/' + id;
+	});
+	
+	$('.back').click(function() {
+		location.href = 'lists';
 	});
 });
