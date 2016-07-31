@@ -71,6 +71,11 @@ Router::scope('/', function (RouteBuilder $routes) {
      * You can remove these routes once you've connected the
      * routes you want in your application.
      */
+    $routes->connect('about-us', ['controller' => 'Articles', 'action' => 'aboutus']);
+    $routes->connect('introductions', ['controller' => 'Articles', 'action' => 'introductions']);
+    $routes->connect('forms', ['controller' => 'Forms', 'action' => 'index']);
+    $routes->connect('quesion-answer', ['controller' => 'Articles', 'action' => 'qanda']);
+    
     $routes->fallbacks('DashedRoute');
 });
 

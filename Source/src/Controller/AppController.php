@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use App\Lib\ObjectUtils;
+use App\Lib\Utils;
 
 /**
  * Application Controller
@@ -28,6 +30,9 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
     use CommonTrait;
+    
+    protected $utils;
+    protected $objectUtils;
     /**
      * Initialization hook method.
      *
@@ -43,6 +48,9 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        
+        $this->utils = Utils::getInstance();
+        $this->objectUtils = ObjectUtils::getInstance();
     }
 
     /**

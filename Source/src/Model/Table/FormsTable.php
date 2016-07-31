@@ -48,4 +48,8 @@ class FormsTable extends AppTable
             ]]);
         return $validator;
     }
+    
+    public function getForms() {
+        return $this->find()->all();
+    }
 }
