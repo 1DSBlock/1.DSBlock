@@ -42,6 +42,9 @@
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Articles</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build(['controller' => 'articles', 'action' => 'lists']); ?>"><i class="fa fa-circle-o"></i>Articles Manager</a></li>
@@ -50,7 +53,18 @@
         </li>
         <li>
           <a href="<?php echo $this->Url->build(['controller' => 'forms', 'action' => 'lists']); ?>">
-            <i class="fa fa-edit"></i> <span>Forms</span>
+            <i class="fa fa-edit"></i> <span>Forms Manager</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $this->Url->build(['controller' => 'users', 'action' => 'lists']); ?>">
+            <i class="fa fa-users"></i> <span>Customers Manager</span>
+          </a>
+        </li>
+        <li class="header">SYSTEM</li>
+        <li>
+          <a href="<?php echo $this->Url->build(['controller' => 'system_users', 'action' => 'lists']); ?>">
+            <i class="fa fa-users"></i> <span>System Users Manager</span>
           </a>
         </li>
       </ul>

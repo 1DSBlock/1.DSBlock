@@ -106,7 +106,7 @@ class AppAdminController extends Controller
             ],
             'loginAction' => [
                 'admin' => true,
-                'controller' => 'users',
+                'controller' => 'SystemUsers',
                 'action' => 'login'
             ],
             'loginRedirect' => [
