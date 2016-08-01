@@ -11,20 +11,19 @@ class ArticlesController extends AppController
         $this->Auth->allow('*');
     }
 
-    public function aboutus()
-    {
-        $aboutUs = $this->Articles->getAboutUs();
-        $this->set(compact('aboutUs'));
-    }
-
-    public function introductions()
-    {
-        $introductions = $this->Articles->getIntroductions();debug($introductions);
-        $this->set(compact('introductions'));
-    }
-    
-    public function qanda() {
-        $questions = $this->Articles->getQA();
-        $this->set(compact('questions'));
+    public function view() {
+        $id = (int) !empty($this->request->params['?']['id']) ? $this->request->params['?']['id'] : 0;
+        $cid = (int) !empty($this->request->params['?']['cid']) ? $this->request->params['?']['cid'] : 0;
+        if(!empty($id)) {
+            $article = $this->Articles->get($id);
+            $this->set(compact('article'));
+            
+            $this->render('article');
+        } elseif(!empty($cid)) {
+            $blogs = $this->Articles->get($id);
+            $this->set(compact('blogs'));
+            
+            $this->render('blog');
+        }
     }
 }

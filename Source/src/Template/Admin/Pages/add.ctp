@@ -1,17 +1,13 @@
-<!-- Content Header (Page header) -->
 <?php
 echo $this->Html->css('../system/plugins/select2/select2.min', ['block' => 'css']);
-
 echo $this->Html->script('../system/plugins/select2/select2.full.min', ['block' => 'scriptBottom']);
-echo $this->Html->scriptBlock('$(function () {
-    //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
-  });', ['block' => 'scriptBottom']);
 echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBottom']);
+echo $this->Html->script('../system/dist/js/pages/pages.js', ['block' => 'scriptBottom']);
 ?>
+<!-- Content Header (Page header) -->
 <section class="content-header">
 <h1>
-Articles
+Pages
 </h1>
 <ol class="breadcrumb">
 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -31,18 +27,30 @@ Articles
             <!-- /.box-header -->
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
-              <div class="box-body pad">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-              	<div class="form-group"><label for="title">Category</label>
+              <div class="box-body">
+              	<?php echo $this->Form->input('name', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Name']); ?>
+              	<?php echo $this->Form->radio('type', $articlesType, ['default' => 0, 'class' => 'form-control type-select']); ?>
+              	<div class="form-group articles-list">
+              	<label for="title">Articles</label>
+              	<?php 
+                echo $this->Form->select(
+                    'article_id',
+                    $articles,
+                    ['class' => 'form-control select2']
+                    );
+                ?>
+                </div>
+                <div class="form-group categories-list">
+                <label for="title">Categories</label>
               	<?php 
                 echo $this->Form->select(
                     'article_category_id',
                     $categories,
-                    ['empty' => 'None', 'class' => 'form-control select2']
+                    ['class' => 'form-control select2']
                     );
                 ?>
                 </div>
-                <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+                <?php echo $this->Form->input('link', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Link']); ?>
               </div>
               <!-- /.box-body -->
 

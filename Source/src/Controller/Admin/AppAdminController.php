@@ -8,6 +8,7 @@ use Cake\Event\Event;
 use Cake\Log\Log;
 use App\Controller\CommonTrait;
 use App\Lib\Utils;
+use App\Lib\ObjectUtils;
 
 class AppAdminController extends Controller
 {
@@ -15,6 +16,7 @@ class AppAdminController extends Controller
     use CommonTrait;
 
     protected $utils;
+    protected $objectUtils;
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT
@@ -48,6 +50,7 @@ class AppAdminController extends Controller
         $this->viewBuilder()->layout('system_default');
         
         $this->utils = Utils::getInstance();
+        $this->objectUtils = ObjectUtils::getInstance();
     }
 
     /**
@@ -110,6 +113,8 @@ class AppAdminController extends Controller
                 'action' => 'login'
             ],
             'loginRedirect' => [
+                'admin' => true,
+                'controller' => 'SystemUsers',
                 'action' => 'dashboard'
             ],
             // 'flash' => [

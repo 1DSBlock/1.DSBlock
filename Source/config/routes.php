@@ -21,6 +21,8 @@
 use Cake\Core\Plugin;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
+use Cake\ORM\TableRegistry;
+use Cake\Cache\Cache;
 
 /**
  * The default class to use for all routes
@@ -71,10 +73,6 @@ Router::scope('/', function (RouteBuilder $routes) {
      * You can remove these routes once you've connected the
      * routes you want in your application.
      */
-    $routes->connect('about-us', ['controller' => 'Articles', 'action' => 'aboutus']);
-    $routes->connect('introductions', ['controller' => 'Articles', 'action' => 'introductions']);
-    $routes->connect('forms', ['controller' => 'Forms', 'action' => 'index']);
-    $routes->connect('quesion-answer', ['controller' => 'Articles', 'action' => 'qanda']);
     
     $routes->fallbacks('DashedRoute');
 });
@@ -84,7 +82,15 @@ Router::prefix('admin', function (RouteBuilder $routes) {
     $routes->connect('/', ['controller'=>'SystemUsers','action'=>'login']);
     $routes->fallbacks('DashedRoute');
 });
-    
+
+$pages = TableRegistry::get('Pages');
+if(empty($articles = Cache::read(CACHE_PAGES))) {
+    $articles = $pages->find()->contain(['PageUrls'])->combine('name', function ($entity) { return $entity->page_url->link; })->toArray();
+    Cache::write(CACHE_PAGES, $articles);
+}
+foreach($articles as $page => $link) {
+    Router::connect($page, Router::parse($link));
+}
 
 /**
  * Load all plugin routes.  See the Plugin documentation on

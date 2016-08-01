@@ -41,16 +41,4 @@ class ArticlesTable extends AppTable
         ]);
         return $validator;
     }
-    
-    public function getAboutUs() {
-        return $this->get(self::ABOUT_US);
-    }
-    
-    public function getIntroductions() {
-        return $this->find()->where(['article_category_id' => self::INTRODUCTION])->contain(['ArticleCategories'])->all();
-    }
-    
-    public function getQA() {
-        return $this->find()->where(['article_category_id' => self::QA])->contain(['ArticleCategories'])->all();
-    }
 }

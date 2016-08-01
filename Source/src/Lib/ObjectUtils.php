@@ -20,7 +20,7 @@ class ObjectUtils {
     
     public function useTables($obj, $classes = []) {
         foreach($classes as $class) {
-            $obj->class = TableRegistry::get($class);
+            $obj->$class = TableRegistry::get($class);
         }
     }
 }

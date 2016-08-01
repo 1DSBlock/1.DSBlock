@@ -48,6 +48,11 @@ var controller = '<?= \Cake\Utility\Inflector::tableize($params['controller']); 
           </a>
         </li>
         <li class="header">SYSTEM</li>
+        <li class='pages'>
+          <a href="<?php echo $this->Url->build(['controller' => 'pages', 'action' => 'lists']); ?>">
+            <i class="fa fa-users"></i> <span>Pages Manager</span>
+          </a>
+        </li>
         <li class='system_users'>
           <a href="<?php echo $this->Url->build(['controller' => 'system_users', 'action' => 'lists']); ?>">
             <i class="fa fa-users"></i> <span>System Users Manager</span>

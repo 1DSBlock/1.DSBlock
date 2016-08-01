@@ -20,6 +20,8 @@ use App\Lib\ObjectUtils;
 use App\Lib\Utils;
 use App\Model\Entity\User;
 use Cake\Controller\Component\AuthComponent;
+use Cake\Network\Request;
+use Cake\Network\Response;
 
 /**
  * Application Controller
@@ -35,6 +37,11 @@ class AppController extends Controller
     
     protected $utils;
     protected $objectUtils;
+    
+    public function __construct(Request $request = null, Response $response = null, $name = null, $eventManager = null, $components = null)
+    {
+        parent::__construct($request, $response, $name, $eventManager, $components);
+    }
     /**
      * Initialization hook method.
      *
@@ -47,7 +54,7 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
+        
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth');

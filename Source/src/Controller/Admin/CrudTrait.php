@@ -55,12 +55,10 @@ trait CrudTrait {
         $this->save();
     }
 
-    protected function getObject($id, $contains = [])
+    protected function getObject($id)
     {
         $table = $this->name;
-        $entity = $this->$table->get($id, [
-            'contain' => $contains
-        ]);
+        $entity = $this->$table->get($id);
         return $entity;
     }
 
@@ -79,6 +77,8 @@ trait CrudTrait {
             $this->set(compact('entity'));
             $this->save($entity);
         }
+        
+        return $entity;
     }
 
     public function delete($id = null)
