@@ -134,6 +134,6 @@ class AppController extends Controller
             // }
     
             // Default deny
-            return true;
+        return true;
     }
 }
