@@ -7,6 +7,7 @@ use Cake\Validation\Validator;
 use Cake\Event\Event;
 use Cake\Datasource\EntityInterface;
 use Cake\Cache\Cache;
+use Cake\Routing\Router;
 
 class PagesTable extends AppTable
 {
@@ -38,7 +39,7 @@ class PagesTable extends AppTable
     
     public function getAllPages() {
         if(empty($articles = Cache::read(CACHE_PAGES))) {
-            $articles = $this->find()->contain(['PageUrls'])->combine('name', function ($entity) { return $entity->page_url->link; })->toArray();
+            $articles = $this->find()->contain(['PageUrls'])->combine('name', function ($entity) { return $entity->page_url->route_link; })->toArray();
             Cache::write(CACHE_PAGES, $articles);
         }
         return $articles;

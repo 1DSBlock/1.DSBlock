@@ -1,7 +1,7 @@
 <div class="footer">
 			<div class="container">
 		<div class="logo_ft">
-			<a href="http://ds-block.com/en/" class="logo"><img src="img/logo.png" alt="logo">
+			<a href="/" class="logo"><img src="img/logo.png" alt="logo">
 				<br>LIVING CELL THERAPY IN GERMANY Younger – Healthier – Wealthier
 			</a>
 			<div class="mxh">
@@ -17,7 +17,7 @@
 				11A, P Street, Block My Giang 1A, Tan Phong Ward, Dist.7, HCMC
 			</div>
 			<div class="mail">Email:<a href="mailto:clients@ds-block.com"> clients@ds-block.com </a>
-				<br> Website: <a href="http://ds-block.com/en/" target="_blank" rel="nofollow">www.ds-block.com</a>
+				<br> Website: <a href="/" target="_blank" rel="nofollow">www.ds-block.com</a>
 			</div>
 			<div class="hotline">
 				<strong>Hotline:</strong>

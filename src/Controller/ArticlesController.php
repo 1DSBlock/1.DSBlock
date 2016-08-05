@@ -12,8 +12,8 @@ class ArticlesController extends AppController
     }
 
     public function view() {
-        $id = (int) !empty($this->request->params['?']['id']) ? $this->request->params['?']['id'] : 0;
-        $cid = (int) !empty($this->request->params['?']['cid']) ? $this->request->params['?']['cid'] : 0;
+        $id = (int) !empty($this->request->params['id']) ? $this->request->params['id'] : 0;
+        $cid = (int) !empty($this->request->params['cid']) ? $this->request->params['cid'] : 0;
         if(!empty($id)) {
             $article = $this->Articles->get($id);
             $this->set(compact('article'));

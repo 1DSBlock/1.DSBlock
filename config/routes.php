@@ -58,7 +58,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-
+   
     /**
      * Connect catchall routes for all controllers.
      *
@@ -88,9 +88,8 @@ Router::prefix('admin', function (RouteBuilder $routes) {
 $pages = TableRegistry::get('Pages');
 $articles = $pages->getAllPages();
 foreach($articles as $page => $link) {
-    Router::connect($page. '.html', Router::parse($link));
+    Router::connect($page. '.html', $link);
 }
-
 /**
  * Load all plugin routes.  See the Plugin documentation on
  * how to customize the loading of plugin routes.

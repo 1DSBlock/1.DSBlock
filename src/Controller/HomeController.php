@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use Cake\Event\Event;
+use App\Lib\ObjectUtils;
 
 class HomeController extends AppController
 {
@@ -13,6 +14,8 @@ class HomeController extends AppController
     
     public function index()
     {
-        
+        $this->objectUtils->useTables($this, ['Pages']);
+        $pages = $this->Pages->getAllPages();
+        $this->set(compact('pages'));
     }
 }

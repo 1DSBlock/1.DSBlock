@@ -13,7 +13,7 @@
 	</div>
 	<div class="header">
 		<div class="container">
-			<a href="http://ds-block.com/" class="logo"><img src="img/logo.png" alt="logo">LIVING CELL THERAPY IN GERMANY Younger – Healthier – Wealthier
+			<a href="/" class="logo"><img src="img/logo.png" alt="logo">LIVING CELL THERAPY IN GERMANY Younger – Healthier – Wealthier
 			</a>
 	
 			<ul class="navmenu">
@@ -39,7 +39,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="http://ds-block.com/en" class="navbar-brand"><img src="img/logo.png" alt="logo"></a>
+			<a href="/" class="navbar-brand"><img src="img/logo.png" alt="logo"></a>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 				<li><a href="#" class="active">Trang chủ</a></li>
 				<li><a href="#">LIỆU PHÁP  TẾ BÀO TƯƠI</a><span></span></li>
