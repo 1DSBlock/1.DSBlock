@@ -33,7 +33,7 @@ a. Config virtualhost
 		        Order Allow,Deny
 		        Allow from all
 		    </Directory>
-		    ErrorLog "<path>/1.DSBlock/Source/logs/mysite.local-error_log"
+		    ErrorLog "<path>/1.DSBlock/logs/mysite.local-error_log"
 		</VirtualHost>
    ```
    Notes: **<path>** The obsolute path of your source code
