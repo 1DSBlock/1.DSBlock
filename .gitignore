@@ -1,5 +1,7 @@
 .buildpath
 .settings/org.eclipse.php.core.prefs
 .settings/org.eclipse.wst.common.project.facet.core.xml
-Source/tmp/cache/models/
-Source/tmp/cache/persistent/
+tmp/cache/models/
+tmp/cache/persistent/
+app.php
+logs/
