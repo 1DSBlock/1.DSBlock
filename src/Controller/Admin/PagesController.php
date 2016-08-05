@@ -44,9 +44,9 @@ class PagesController extends AppAdminController
         return $entity;
     }
     
-    public function edit($id = null)
+    public function edit($id = null, $return = false)
     {
-        $entity = parent::edit($id);
+        $entity = parent::edit($id, true);
         $entity->set([
             'article_id' => $entity->page_article->article_id,
             'article_category_id' => $entity->page_article->article_category_id

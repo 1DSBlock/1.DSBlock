@@ -62,7 +62,7 @@ trait CrudTrait {
         return $entity;
     }
 
-    public function edit($id = null)
+    public function edit($id = null, $return = false)
     {
         $id = (int) $id;
         $params = $this->request->params;
@@ -78,7 +78,9 @@ trait CrudTrait {
             $this->save($entity);
         }
         
-        return $entity;
+        if($return) {
+            return $entity;
+        }
     }
 
     public function delete($id = null)

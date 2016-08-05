@@ -28,7 +28,7 @@ class ArticlesController extends AppAdminController
         $this->set(compact('categories'));
     }
     
-    public function edit($id = null)
+    public function edit($id = null, $return = false)
     {
         parent::edit($id);
         $category = TableRegistry::get('ArticleCategories');
