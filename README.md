@@ -1,6 +1,9 @@
 ###  Requirements
 - Xampp 5.6
 - PHP 5.6
+- Composer 
+	+ https://getcomposer.org/doc/00-intro.md#installation-windows
+	+ https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
 
 ###  Configurations
 a. Config virtualhost
