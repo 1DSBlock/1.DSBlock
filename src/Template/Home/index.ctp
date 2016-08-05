@@ -16,7 +16,7 @@ echo $this->element('slides');
 							    $pages['introductions'],
 							    array("class" => "img_product", "escape" => false)
 							    );
-							echo $this->Html->link('INTRODUCTIONS', $pages['q&a'], ['class' => 'name_product']);
+							echo $this->Html->link('INTRODUCTIONS', $pages['introductions'], ['class' => 'name_product']);
 							?>
 						</div>
 						<div class="item_product">
