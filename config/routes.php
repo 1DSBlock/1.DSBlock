@@ -45,13 +45,15 @@ use Cake\Cache\Cache;
 Router::defaultRouteClass('DashedRoute');
 
 Router::scope('/', function (RouteBuilder $routes) {
+    $routes->extensions(['html']);
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-
+//     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->connect('/', ['controller' => 'Home', 'action' => 'index', 'home']);
+    
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
@@ -84,12 +86,9 @@ Router::prefix('admin', function (RouteBuilder $routes) {
 });
 
 $pages = TableRegistry::get('Pages');
-if(empty($articles = Cache::read(CACHE_PAGES))) {
-    $articles = $pages->find()->contain(['PageUrls'])->combine('name', function ($entity) { return $entity->page_url->link; })->toArray();
-    Cache::write(CACHE_PAGES, $articles);
-}
+$articles = $pages->getAllPages();
 foreach($articles as $page => $link) {
-    Router::connect($page, Router::parse($link));
+    Router::connect($page. '.html', Router::parse($link));
 }
 
 /**

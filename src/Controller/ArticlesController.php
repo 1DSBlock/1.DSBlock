@@ -26,4 +26,6 @@ class ArticlesController extends AppController
             $this->render('blog');
         }
     }
+    
+    
 }

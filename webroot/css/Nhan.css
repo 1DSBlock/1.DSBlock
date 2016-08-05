@@ -1,0 +1,79 @@
+.publication_hot_img {width: 40%; float: left; height: 140px; margin-right: 10px; border: 6px solid #f6f6f6 ; text-align: center; }
+.item_product.six_item span.description{text-align: center !important; }
+.wrap_product .item_product span.description{text-align: center !important;}
+.progressbar-text{font-size: 70px}
+@media (max-width: 1199px) {
+	/*hieu qua duoc chung minh*/
+	.week{width: 100%;}
+
+}
+@media (max-width: 991px) {
+	/*hieu qua duoc chung minh*/
+	.row_feelings .col-md-6.right{width: 40% !important;float: right; padding-left: 0 !important; padding-top: 0 !important;}
+	.row_feelings .col-md-6.left.fix_height{width: 60% !important;}
+	.progressbar-text {font-size: 60px;}
+	.rows.certificate{padding-left:0 !important;padding-right:0 !important}
+}
+@media (max-width: 767px) {
+	.progressbar-text {font-size: 45px;}
+}
+@media (max-width: 680px) {
+	/*Home*/
+	.col-left-home{text-align: left !important;}
+
+	.progressbar-text {font-size: 35px;}
+
+	.item_product.six_item:nth-child(6n){width: 33.333% !important;}
+	.item_product.six_item:nth-child(6n+1){clear: both !important;}
+	.item_certificate{padding-left: 15px !important; padding-right: 15px !important;}
+	
+}
+@media (max-width: 570px) {
+	.progressbar-text {font-size: 25px !important;}
+
+	.grounp_search.fix {padding-left: 90px !important;}
+	.grounp_search.fix label{left: 0 !important;}
+	.table_update{padding-left: 0 !important; padding-right: 0 !important;}
+
+	.grounp_search.no_position input{width: 100% !important;}
+	/*group_search  Q&A*/
+	.grounp_search label, .grounp_search button.btnsearch {position: static !important;}
+	.grounp_search input{width: 70% !important;}
+	.grounp_search{padding-left: 0 !important;padding-right: 0 !important;}
+	.search_fm{padding-bottom: 10px;}
+	.grounp_search.fix{padding-left: 0 !important;}
+	/*tieu chuan y khoa*/
+	.wrapper_color.fix.medical_advice .container{padding-left: 15px !important; padding-right:15px !important;}
+	.wrapper_color.fix.medical_advice .rows:nth-child(2n+1) .col-md-6.left{padding-right: 0 !important;}
+	.content_ span{width: 100% !important;}
+	.row_feelings no_border_bot .row_feelings .col-md-6.right{width:60% !important}
+	.progressbar-text{font-size:28px;}
+	.item_percent_recovery_rate{width:33.33333% !important;}.group_percent_recovery_rate .item_percent_recovery_rate:nth-child(4n+1){clear:none;}.group_percent_recovery_rate .item_percent_recovery_rate:nth-child(3n+1){clear:both;}
+
+@media (max-width: 480px) {
+	
+	/*Home*/
+	.col-left-home .avatar_customer.border_color{padding-right: 15px !important;}
+	.row_home .avatar_customer a{width: 120px !important ;height: 120px !important;}
+	.row_home:nth-child(1) .col-left-home, .row_home:nth-child(1) .col-right-home{padding-top: 15px !important;}
+	/*hieu qua duoc chung minh*/
+	.progressbar-text {font-size: 30px !important;}
+	.item_percent_recovery_rate{width: 50% !important;padding-right: 0! important;}
+	.group_percent_recovery_rate .item_percent_recovery_rate:nth-child(3n+1){clear:none;}.group_percent_recovery_rate .item_percent_recovery_rate:nth-child(2n+1){clear:both;}
+	.row_feelings .col-md-6.left.fix_height{width: 100% !important;padding-left:0;padding-right:0;}
+	.row_feelings .col-md-6.right{width: 100% !important;padding-left:0;padding-right:0;}
+	/*.row_feelings {padding-bottom: 60px !important;}*/
+
+	.item_product.six_item:nth-child(6n){width: 50% !important;}
+	
+
+	.row_feelings:nth-child(2n) .name_customer{right: 20% !important;}
+	.name_ span{font-size: 10px;}
+
+	.name_customer{padding-top: 30px !important; padding-bottom: 30px !important;}
+	.item_certificate img{width: 100%;}
+	.item_certificate{width: 100% !important;}
+}
+@media (max-width: 320px) {
+
+}

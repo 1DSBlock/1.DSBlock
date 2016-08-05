@@ -6,6 +6,7 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Cake\Event\Event;
 use Cake\Datasource\EntityInterface;
+use Cake\Cache\Cache;
 
 class PagesTable extends AppTable
 {
@@ -33,5 +34,13 @@ class PagesTable extends AppTable
         $this->PageArticles->deleteAll(['page_id' => $pageId]);
         $this->PageUrls->deleteAll(['page_id' => $pageId]);
         return true;
+    }
+    
+    public function getAllPages() {
+        if(empty($articles = Cache::read(CACHE_PAGES))) {
+            $articles = $this->find()->contain(['PageUrls'])->combine('name', function ($entity) { return $entity->page_url->link; })->toArray();
+            Cache::write(CACHE_PAGES, $articles);
+        }
+        return $articles;
     }
 }
