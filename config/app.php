@@ -9,7 +9,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
+    'debug' => true,
 
     /**
      * Configure basic information about the application.
@@ -64,7 +64,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', '__SALT__'),
+        'salt' => '4y1f1A0ZtFVFRE560qSLGjK3h0RVH2DMAF2Cg2BLHxqzcvGdXyZDTIHaIz6rBLedqgRHiss10TAdpirmRq1L9IWTi2kVNy8eQZW8soatiMGH485Wz6GIPCC8FY3txbIn',
     ],
 
     /**
@@ -76,7 +76,7 @@ return [
      * enable timestamping regardless of debug value.
      */
     'Asset' => [
-        // 'timestamp' => true,
+        'timestamp' => true,
     ],
 
     /**
@@ -226,9 +226,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'my_app',
+            'username' => 'root',
+            'password' => '123456',
+            'database' => 'dsblock',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],

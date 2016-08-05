@@ -25,8 +25,8 @@ a. Config virtualhost
 		
 		<VirtualHost *:80>
 		    ServerName dsblock.local
-		    DocumentRoot "<path>/1.DSBlock/Source"
-		    <Directory "<path>/1.DSBlock/Source">
+		    DocumentRoot "<path>/1.DSBlock"
+		    <Directory "<path>/1.DSBlock">
 		        Options Indexes FollowSymLinks Includes ExecCGI
 		        AllowOverride All
 		        Require all granted
@@ -48,6 +48,7 @@ e. Create database
 - Open http://localhost/phpmyadmin
 - create new database : dsblock
 - import database from /config/schema/dsblock.sql
+- change app.default.php to app.php
 - open /config/app.php. in line 230, change your password if exists
 
 f. Test web
