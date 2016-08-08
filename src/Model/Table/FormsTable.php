@@ -38,8 +38,8 @@ class FormsTable extends AppTable
         ->allowEmpty('filename', 'update')
         ->add('filename', [
             'validExtension' => [
-                'rule' => ['extension',['pdf']], // default  ['gif', 'jpeg', 'png', 'jpg']
-                'message' => __('These files extension are allowed: .pdf')
+                'rule' => ['extension',['pdf', 'doc', 'docx']], // default  ['gif', 'jpeg', 'png', 'jpg']
+                'message' => __('These files extension are allowed: .pdf, .doc/docx')
             ]])
         ->add('filename', [
             'validSize' => [

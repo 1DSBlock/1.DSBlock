@@ -13,6 +13,6 @@ class Form extends Entity
     
     public function _getImageFullPath()
     {
-        return 'uploads/forms/' . $this->_properties['dir'] . '/' . $this->_properties['filename'];
+        return 'upload/forms/' . $this->_properties['dir'] . '/' . $this->_properties['filename'];
     }
 }

@@ -8,7 +8,7 @@ class ArticlesController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['view']);
+        $this->Auth->allow(['view', 'sendFile']);
     }
 
     public function view() {
@@ -21,11 +21,19 @@ class ArticlesController extends AppController
             $this->render('article');
         } elseif(!empty($cid)) {
             $blogs = $this->Articles->find()->where(['article_category_id' => $cid]);
-            $this->set(compact('blogs'));
             
-            $this->render('blog');
+            $this->objectUtils->useTables($this, ['ArticleCategories']);
+            $category = $this->ArticleCategories->get($cid);
+            
+            $this->set(compact('blogs', 'category'));
+            
+            $this->render($category->alias);
         }
     }
     
-    
+    public function download() {
+        $filePath = $this->request->query('path');
+        $fileName = $this->request->query('filename');
+        return $this->sendFile($filePath, $fileName);
+    }
 }
