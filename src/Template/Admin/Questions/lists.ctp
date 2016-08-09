@@ -1,13 +1,9 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Pages
+        Q & A
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
+
     </section>
     <!-- Main content -->
     <section class="content">
@@ -15,7 +11,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Pages Manager</h3>
+              <h3 class="box-title">Questions Manager</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -35,8 +31,7 @@
               <table class="table table-hover">
                 <tr>
                   <th>ID</th>
-                  <th>Page</th>
-                  <th>Link</th>
+                  <th>Name</th>
                   <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>
@@ -50,9 +45,9 @@
                 <tr>
                   <td><?= $item->id; ?></td>
                   <td><?= $item->name; ?></td>
-                  <td><?= $item->page_url->link; ?></td>
                   <td>
                   <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>
+                  <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>">Delete</button>
                   </td>
                 </tr>
                 <?php endforeach; ?>

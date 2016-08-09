@@ -37,6 +37,11 @@ var controller = '<?= \Cake\Utility\Inflector::tableize($params['controller']); 
             <li class="article_categories"><a href="<?php echo $this->Url->build(['controller' => 'article_categories', 'action' => 'lists']); ?>"><i class="fa fa-circle-o"></i> Article Categories Manager</a></li>
           </ul>
         </li>
+        <li class="questions">
+          <a href="<?php echo $this->Url->build(['controller' => 'questions', 'action' => 'lists']); ?>">
+            <i class="fa fa-edit"></i> <span>Questions Manager</span>
+          </a>
+        </li>
         <li class="forms">
           <a href="<?php echo $this->Url->build(['controller' => 'forms', 'action' => 'lists']); ?>">
             <i class="fa fa-edit"></i> <span>Forms Manager</span>

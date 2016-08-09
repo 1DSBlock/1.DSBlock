@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 03, 2016 at 07:21 PM
+-- Generation Time: Aug 09, 2016 at 05:45 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `forms` (
   `dir` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `forms`
@@ -90,7 +90,9 @@ CREATE TABLE IF NOT EXISTS `forms` (
 INSERT INTO `forms` (`id`, `description`, `filename`, `dir`, `created`, `modified`) VALUES
 (13, 'test 1', 'adobe-acrobat-xi-create-form-or-template-tutorial_ue.pdf', '4c9f4ea2-8eb6-441f-b27c-6cfcbc7e2a39', '2016-07-31 04:27:58', '2016-07-31 14:14:48'),
 (14, 'test 2', 'adobe-acrobat-xi-create-form-or-template-tutorial_ue.pdf', '59d42955-f7dc-44be-8e69-d4d757926e64', '2016-07-31 14:14:40', '2016-07-31 14:14:40'),
-(15, 'test 3', 'adobe-acrobat-xi-create-form-or-template-tutorial_ue.pdf', 'f88f3a91-c946-43b8-a211-f7c1bfd4ffb7', '2016-07-31 14:15:17', '2016-07-31 14:15:17');
+(15, 'test 3', 'adobe-acrobat-xi-create-form-or-template-tutorial_ue.pdf', 'f88f3a91-c946-43b8-a211-f7c1bfd4ffb7', '2016-07-31 14:15:17', '2016-07-31 14:15:17'),
+(16, 'test 4', 'adobe-acrobat-xi-create-form-or-template-tutorial_ue.pdf', 'bce7c4e3-4938-4d81-aad9-b21f8a15aac1', '2016-08-08 16:41:31', '2016-08-08 16:41:31'),
+(17, 'test 5', 'Pillar Seminary Feature.docx', 'e6648ad5-5326-4cac-b43e-d863d7422f46', '2016-08-08 16:46:26', '2016-08-08 16:46:26');
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
 INSERT INTO `pages` (`id`, `name`, `type`) VALUES
 (29, 'about-us', 0),
 (30, 'introductions', 1),
-(31, 'q&a', 1),
+(31, 'qa', 2),
 (34, 'forms', 2);
 
 -- --------------------------------------------------------
@@ -125,16 +127,15 @@ CREATE TABLE IF NOT EXISTS `page_articles` (
   `article_id` int(11) NOT NULL,
   `article_category_id` int(11) NOT NULL,
   `page_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `page_articles`
 --
 
 INSERT INTO `page_articles` (`id`, `article_id`, `article_category_id`, `page_id`) VALUES
-(18, 1, 0, 29),
-(25, 0, 1, 30),
-(31, 0, 2, 31);
+(32, 1, 0, 29),
+(33, 0, 1, 30);
 
 -- --------------------------------------------------------
 
@@ -146,17 +147,39 @@ CREATE TABLE IF NOT EXISTS `page_urls` (
   `id` int(11) NOT NULL,
   `page_id` int(11) NOT NULL,
   `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `page_urls`
 --
 
 INSERT INTO `page_urls` (`id`, `page_id`, `link`) VALUES
-(6, 29, '/articles/view?id=1'),
 (11, 34, '/forms'),
-(16, 30, '/articles/view?cid=1'),
-(22, 31, '/articles/view?cid=2');
+(23, 29, '/articles/view?id=1'),
+(24, 30, '/articles/view?cid=1'),
+(27, 31, '/questions');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questions`
+--
+
+CREATE TABLE IF NOT EXISTS `questions` (
+  `id` int(11) NOT NULL,
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `answer` text COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`id`, `name`, `answer`, `created`, `modified`) VALUES
+(1, 'Có phải Liệu pháp Tế bào tươi thích hợp cho tất cả mọi người không?', '<p>Thông thường liệu pháp tế bào tươi thích hợp cho mọi đối tương hách hàng. Tuy nhiên, có một vài trường hợp chống chỉ định sử dụng Liệu pháp Tế bào tươi. Việc khám, xét nghiệm trước điều trị sẽ chỉ ra những người không phù hợp với Liệu pháp Tế bào tươi.<br></p>', '2016-08-09 15:29:02', '2016-08-09 15:29:02'),
+(2, 'Những người sử dụng Liệu pháp Tế bào tươi có hiệu quả giống nhau không? Nếu không, hiệu quả của liệu pháp bị ảnh hưởng bởi những yếu tố nào?', '<p>Hiệu quả của liệu pháp tế bào tươi phụ thuộc vào rất nhiều yếu tố: hệ thống miễn dịch cơ thể của mỗi cá nhân, sức khỏe tổng thể của khách hàng. Việc Khách hàng thực hiện đúng các khuyến cáo trước và sau khi tiến hành trị liệu là một yếu tố ảnh hưởng nhiều đến hiệu quả của trị liệu<br></p>', '2016-08-09 15:29:28', '2016-08-09 15:29:28');
 
 -- --------------------------------------------------------
 
@@ -240,6 +263,12 @@ ALTER TABLE `page_urls`
   ADD UNIQUE KEY `page_id` (`page_id`);
 
 --
+-- Indexes for table `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `system_users`
 --
 ALTER TABLE `system_users`
@@ -270,7 +299,7 @@ ALTER TABLE `article_categories`
 -- AUTO_INCREMENT for table `forms`
 --
 ALTER TABLE `forms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `pages`
 --
@@ -280,12 +309,17 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `page_articles`
 --
 ALTER TABLE `page_articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `page_urls`
 --
 ALTER TABLE `page_urls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT for table `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `system_users`
 --
