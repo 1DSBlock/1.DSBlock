@@ -1,7 +1,7 @@
 <div class="footer">
 			<div class="container">
 		<div class="logo_ft">
-			<a href="/" class="logo"><img src="img/logo.png" alt="logo">
+			<a href="/" class="logo"><img src="/img/logo.png" alt="logo">
 				<br>LIVING CELL THERAPY IN GERMANY Younger – Healthier – Wealthier
 			</a>
 			<div class="mxh">
@@ -30,9 +30,9 @@
 
 	<div class="clearfix"></div>
 </div>
-<div id="goTop" class="gotoppage"><img src="img/gotop.png" alt="Lên đầu trang" /></div>
+<div id="goTop" class="gotoppage"><img src="/img/gotop.png" alt="Lên đầu trang" /></div>
 
-<?php 
+<?php
 echo $this->Html->script('jquery.min');
 echo $this->Html->script('notify');
 echo $this->Html->script('notify-metro');

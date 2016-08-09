@@ -13,17 +13,14 @@
 	</div>
 	<div class="header">
 		<div class="container">
-			<a href="/" class="logo"><img src="img/logo.png" alt="logo">LIVING CELL THERAPY IN GERMANY Younger – Healthier – Wealthier
+			<a href="/" class="logo"><img src="/img/logo.png" alt="logo">LIVING CELL THERAPY IN GERMANY Younger – Healthier – Wealthier
 			</a>
-	
 			<ul class="navmenu">
-				<li class=""><a href="#">LIỆU PHÁP <br> TẾ BÀO TƯƠI</a><span></span></li>
-				<li class=""><a href="#">HIỆU QUẢ <br> ĐƯỢC CHỨNG MINH</a><span></span></li>
-				<li class=""><a href="#">CHƯƠNG TRÌNH <br> TRỊ LIỆU DS BLOCK</a><span></span></li>
-				<li class=""><a href="#">HOẠT ĐỘNG <br> TRUYỀN THÔNG</a><span></span></li>
-				<li class=""><a href="#">CÂU HỎI <br> THƯỜNG GẶP</a><span></span></li>
-				<li class=""><a href="#">Sản phẩm<br></a><span></span></li>
-				<li class=""><a href="#">Liên hệ</a><span></span></li>
+				<li class=""><a href="<?= $this->Url->build($pages['introductions']) ?>">INTRODUCTIONS</a><span></span></li>
+				<li class=""><a href="<?= $this->Url->build($pages['forms']) ?>">FORMS</a><span></span></li>
+				<li class=""><a href="<?= $this->Url->build($pages['qa']) ?>">Q & A</a><span></span></li>
+				<li class=""><a href="#">PRODUCTS<br></a><span></span></li>
+				<li class=""><a href="/users/login">LOGIN</a><span></span></li>
 				<div class="clearfix"></div>
 			</ul>
 			<div class="clearfix"></div>
@@ -39,16 +36,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="/" class="navbar-brand"><img src="img/logo.png" alt="logo"></a>
+			<a href="/" class="navbar-brand"><img src="/img/logo.png" alt="logo"></a>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				<li><a href="#" class="active">Trang chủ</a></li>
-				<li><a href="#">LIỆU PHÁP  TẾ BÀO TƯƠI</a><span></span></li>
-				<li><a href="#">HIỆU QUẢ  ĐƯỢC CHỨNG MINH</a><span></span></li>
-				<li><a href="#">CHƯƠNG TRÌNH  TRỊ LIỆU DS BLOCK</a><span></span></li>
-				<li><a href="#">HOẠT ĐỘNG  TRUYỀN THÔNG</a><span></span></li>
-				<li><a href="#">CÂU HỎI  THƯỜNG GẶP</a><span></span></li>
-				<li><a href="#">Sản phẩm</a><span></span></li>
-				<li><a href="#">Liên hệ</a><span></span></li>
+				<li class=""><a href="<?= $this->Url->build($pages['introductions']) ?>">INTRODUCTIONS</a><span></span></li>
+				<li class=""><a href="<?= $this->Url->build($pages['forms']) ?>">FORMS</a><span></span></li>
+				<li class=""><a href="<?= $this->Url->build($pages['qa']) ?>">Q & A</a><span></span></li>
+				<li class=""><a href="#">PRODUCTS<br></a><span></span></li>
+				<li class=""><a href="/users/login">LOGIN</a><span></span></li>
 			</ul>
 			<div class="clearfix"></div>
 		</div>

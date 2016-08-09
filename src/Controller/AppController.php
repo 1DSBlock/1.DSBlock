@@ -34,10 +34,10 @@ use Cake\Network\Response;
 class AppController extends Controller
 {
     use CommonTrait;
-    
+
     protected $utils;
     protected $objectUtils;
-    
+
     public function __construct(Request $request = null, Response $response = null, $name = null, $eventManager = null, $components = null)
     {
         parent::__construct($request, $response, $name, $eventManager, $components);
@@ -54,11 +54,11 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-        
+
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth');
-        
+
         $this->utils = Utils::getInstance();
         $this->objectUtils = ObjectUtils::getInstance();
     }
@@ -71,13 +71,22 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
+        $this->loadPages();
+
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
             $this->set('_serialize', true);
         }
     }
-    
+
+    protected function loadPages()
+    {
+        $this->objectUtils->useTables($this, ['Pages']);
+        $pages = $this->Pages->getAllPages();
+        $this->set(compact('pages'));
+    }
+
     /**
      * beforeFilter all things need to run before running an action
      *
@@ -90,7 +99,7 @@ class AppController extends Controller
         parent::beforeFilter($event);
         $this->configureAuth();
     }
-    
+
     /**
      * configureAuth auth configurations
      *
@@ -122,17 +131,17 @@ class AppController extends Controller
 //                 ],
                 'authError' => __('Your session has ended. Please log back in.')
             ];
-    
+
         $this->Auth->config($userAuth);
     }
-    
+
     public function isAuthorized($user)
     {
         // // Admin can access every action
         // if (isset($user['role']) && $user['role'] === 'admin') {
         // return true;
             // }
-    
+
             // Default deny
         return true;
     }

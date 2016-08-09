@@ -11,11 +11,9 @@ class HomeController extends AppController
         parent::beforeFilter($event);
         $this->Auth->allow(['index']);
     }
-    
+
     public function index()
     {
-        $this->objectUtils->useTables($this, ['Pages']);
-        $pages = $this->Pages->getAllPages();
-        $this->set(compact('pages'));
+
     }
 }

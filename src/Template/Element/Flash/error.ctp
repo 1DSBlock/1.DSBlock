@@ -1,1 +1,3 @@
-<div class="message error" onclick="this.classList.add('hidden');"><?= h($message) ?></div>
+<div class="alert alert-danger">
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;<?= h($message) ?>
+</div>

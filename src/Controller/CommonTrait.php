@@ -11,20 +11,20 @@ trait CommonTrait
      */
     protected function sendAjax($status = null, $errorMessage = '')
     {
-    
+
         $this->viewBuilder()->layout(false);
         $this->autoRender = false;
-    
+
         if ($status !== null) {
             $this->ajaxResponse['status'] = $status;
             $this->ajaxResponse['message'] = $errorMessage;
         }
-    
+
         $this->response->body(json_encode($this->ajaxResponse));
         $this->response->type('json');
         return ;
     }
-    
+
     /**
      * Called when processing a download request
      * @param type $filePath
@@ -38,7 +38,7 @@ trait CommonTrait
         }
         return $this->response;
     }
-    
+
     protected function isPost() {
         return $this->request->is('post');
     }
@@ -49,7 +49,7 @@ trait CommonTrait
     protected function isPut() {
         return $this->request->is('put');
     }
-    
+
     /*
      * Show info message
      * $params: 'class' should be: 'error', 'success', 'warn' or 'info'

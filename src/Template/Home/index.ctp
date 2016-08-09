@@ -1,4 +1,4 @@
-<?php 
+<?php
 use Cake\Routing\Router;
 
 echo $this->element('slides');
@@ -25,10 +25,10 @@ echo $this->element('slides');
 							    $this->Html->image("qa.jpg", array(
 							        "alt" => "Q & A"
 							    )),
-							    $pages['q&a'],
+							    $pages['qa'],
 							    array("class" => "img_product", "escape" => false)
 							    );
-							echo $this->Html->link('Q & A', $pages['q&a'], ['class' => 'name_product']);
+							echo $this->Html->link('Q & A', $pages['qa'], ['class' => 'name_product']);
 							?>
 						</div>
 						<div class="item_product">

@@ -11,9 +11,7 @@
 	<meta property="og:url" content="http://ds-block.com/" />
 	<meta name="keywords" content="Tế bào tươi"/>
 	<meta name="description" content="Liệu Pháp Tế Bào Tươi Tại CHLB Đức.">
-	<link rel="icon" type="text/css" href="img/favicon.png">
-	
-	<?= $this->Html->meta('icon') ?>
+	<link rel="icon" type="text/css" href="/img/favicon.png">
 	<?= $this->fetch('meta') ?>
 	<title>Tế Bào Tươi</title>
     <?php echo $this->Html->css('style'); ?>
