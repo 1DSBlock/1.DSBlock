@@ -1,18 +1,13 @@
 <!-- Content Header (Page header) -->
 <?php
-echo $this->Html->css('../system/plugins/select2/select2.min', ['block' => 'css']);
-
-echo $this->Html->script('../system/plugins/select2/select2.full.min', ['block' => 'scriptBottom']);
 echo $this->Html->scriptBlock('$(function () {
     //bootstrap WYSIHTML5 - text editor
     $(".textarea").wysihtml5();
   });', ['block' => 'scriptBottom']);
-echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBottom']);
-;
 ?>
 <section class="content-header">
 <h1>
-Articles
+Products
 </h1>
 </section>
   <section class="content">
@@ -26,19 +21,12 @@ Articles
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <?php echo $this->Form->create($entity); ?>
-              <div class="box-body pad">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-              	<div class="form-group"><label for="title">Category</label>
-              	<?php
-                echo $this->Form->select(
-                    'article_category_id',
-                    $categories,
-                    ['empty' => 'None', 'class' => 'form-control select2']
-                    );
-                ?>
-                </div>
+            <?php echo $this->Form->create($entity, ['type' => 'file']); ?>
+              <div class="box-body">
+                <?php echo $this->Form->input('name', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Name']); ?>
+                <?php echo $this->Form->input('provider', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Provider']); ?>
                 <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+                <?php echo $this->Form->input('image', ['type' => 'file']); ?>
               </div>
               <!-- /.box-body -->
 
