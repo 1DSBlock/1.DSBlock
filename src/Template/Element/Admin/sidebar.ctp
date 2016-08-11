@@ -52,11 +52,6 @@ var controller = '<?= \Cake\Utility\Inflector::tableize($params['controller']); 
             <i class="fa fa-edit"></i> <span>Products Manager</span>
           </a>
         </li>
-         <li class='salers'>
-          <a href="<?php echo $this->Url->build(['controller' => 'salers', 'action' => 'lists']); ?>">
-            <i class="fa fa-users"></i> <span>Salers Manager</span>
-          </a>
-        </li>
         <li class='users'>
           <a href="<?php echo $this->Url->build(['controller' => 'users', 'action' => 'lists']); ?>">
             <i class="fa fa-users"></i> <span>Customers Manager</span>

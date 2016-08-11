@@ -3,11 +3,6 @@
       <h1>
        Pages
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
     </section>
     <!-- Main content -->
     <section class="content">
@@ -36,6 +31,7 @@
                 <tr>
                   <th>ID</th>
                   <th>Page</th>
+                  <th>Key</th>
                   <th>Link</th>
                   <th></th>
                 </tr>
@@ -50,6 +46,7 @@
                 <tr>
                   <td><?= $item->id; ?></td>
                   <td><?= $item->name; ?></td>
+                  <td><?= $item->keylink; ?></td>
                   <td><?= $item->page_url->link; ?></td>
                   <td>
                   <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>

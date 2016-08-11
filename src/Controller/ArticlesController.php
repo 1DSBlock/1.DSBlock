@@ -17,20 +17,24 @@ class ArticlesController extends AppController
         if(!empty($id)) {
             $article = $this->Articles->get($id);
             $this->set(compact('article'));
-            
+
             $this->render('article');
         } elseif(!empty($cid)) {
             $blogs = $this->Articles->find()->where(['article_category_id' => $cid]);
-            
+
             $this->objectUtils->useTables($this, ['ArticleCategories']);
             $category = $this->ArticleCategories->get($cid);
-            
+
             $this->set(compact('blogs', 'category'));
-            
+
             $this->render($category->alias);
         }
     }
-    
+
+    public function detail($alias) {
+
+    }
+
     public function download() {
         $filePath = $this->request->query('path');
         $fileName = $this->request->query('filename');

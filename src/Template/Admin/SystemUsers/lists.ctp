@@ -36,6 +36,7 @@
                 <tr>
                   <th>ID</th>
                   <th>Email</th>
+                  <th>Role</th>
                   <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>
@@ -43,12 +44,13 @@
                   <td colspan="3" align="center">No data</td>
                 </tr>
                 <?php endif;?>
-                <?php 
+                <?php
                 foreach($rows as $item) :
                 ?>
                 <tr>
                   <td><?= $item->id; ?></td>
                   <td><?= $item->email; ?></td>
+                  <td><?= $item->role->role; ?></td>
                   <td>
                   <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>
                   <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>">Delete</button>

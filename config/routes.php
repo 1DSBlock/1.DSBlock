@@ -53,12 +53,12 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
 //     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $routes->connect('/', ['controller' => 'Home', 'action' => 'index', 'home']);
-    
+
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-   
+
     /**
      * Connect catchall routes for all controllers.
      *
@@ -75,7 +75,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * You can remove these routes once you've connected the
      * routes you want in your application.
      */
-    
+
     $routes->fallbacks('DashedRoute');
 });
 
@@ -87,9 +87,11 @@ Router::prefix('admin', function (RouteBuilder $routes) {
 
 $pages = TableRegistry::get('Pages');
 $articles = $pages->getAllPages();
-foreach($articles as $page => $link) {
-    Router::connect($page. '.html', $link);
+foreach($articles as $name => $page) {
+    Router::connect($page->name. '.html', $page->page_url->route_link);
 }
+
+
 /**
  * Load all plugin routes.  See the Plugin documentation on
  * how to customize the loading of plugin routes.

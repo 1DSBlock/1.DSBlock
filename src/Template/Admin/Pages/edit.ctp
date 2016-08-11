@@ -9,11 +9,6 @@ echo $this->Html->script('../system/dist/js/pages/pages.js', ['block' => 'script
 <h1>
 Pages
 </h1>
-<ol class="breadcrumb">
-<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-<li><a href="#">Examples</a></li>
-<li class="active">Invoice</li>
-</ol>
 </section>
   <section class="content">
       <div class="row">
@@ -29,10 +24,11 @@ Pages
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
               	<?php echo $this->Form->input('name', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Name']); ?>
+                <?php echo $this->Form->input('keylink', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Key']); ?>
               	<?php echo $this->Form->radio('type', $articlesType, ['default' => 0, 'class' => 'form-control type-select']); ?>
               	<div class="form-group articles-list">
               	<label for="title">Articles</label>
-              	<?php 
+              	<?php
                 echo $this->Form->select(
                     'article_id',
                     $articles,
@@ -42,7 +38,7 @@ Pages
                 </div>
                 <div class="form-group categories-list">
                 <label for="title">Categories</label>
-              	<?php 
+              	<?php
                 echo $this->Form->select(
                     'article_category_id',
                     $categories,

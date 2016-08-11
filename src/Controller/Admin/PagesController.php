@@ -20,19 +20,19 @@ class PagesController extends AppAdminController
         parent::beforeFilter($event);
         Cache::delete(CACHE_PAGES);
     }
-    
+
     public function add()
     {
         parent::add();
-        
+
         $this->objectUtils->useTables($this, ['Articles', 'ArticleCategories']);
-        
+
         $articlesType = ['articles', 'categories', 'custom'];
         $articles = $this->Articles->find()->combine('id', 'title')->toArray();
         $categories = $this->ArticleCategories->find()->combine('id', 'title')->toArray();
         $this->set(compact('articlesType', 'articles', 'categories'));
     }
-    
+
     /**
      * override
      * @param unknown $id
@@ -43,30 +43,31 @@ class PagesController extends AppAdminController
         $entity = $this->$table->get($id, ['contain' => ['PageArticles', 'PageUrls']]);
         return $entity;
     }
-    
+
     public function edit($id = null, $return = false)
     {
         $entity = parent::edit($id, true);
         $entity->set([
-            'article_id' => $entity->page_article->article_id,
-            'article_category_id' => $entity->page_article->article_category_id
+            'article_id' => !empty($entity->page_article) ? $entity->page_article->article_id : null,
+            'article_category_id' => !empty($entity->page_article) ? $entity->page_article->article_category_id : null,
+            'link' => !empty($entity->page_url) ? $entity->page_url->link : null,
         ]);
-        
+
         $this->objectUtils->useTables($this, ['Articles', 'ArticleCategories']);
-    
+
         $articlesType = ['articles', 'categories', 'custom'];
         $articles = $this->Articles->find()->combine('id', 'title')->toArray();
         $categories = $this->ArticleCategories->find()->combine('id', 'title')->toArray();
         $this->set(compact('articlesType', 'articles', 'categories', 'entity'));
     }
-    
+
     protected function saveRelationship(Page $page, array $data) {
         $this->objectUtils->useTables($this, ['PageArticles', 'PageUrls']);
         if ($this->isPut()) {
             $this->PageArticles->deleteAll(['page_id' => $page->id]);
             $this->PageUrls->deleteAll(['page_id' => $page->id]);
         }
-        
+
         $link = $data['link'];
         if(empty($data['link'])) {
             $entity = $this->PageArticles->newEntity([
@@ -90,7 +91,7 @@ class PagesController extends AppAdminController
         $this->PageUrls->save($entity);
         return ['status' => true, 'errors' => []];
     }
-    
+
     protected function save($data = null)
     {
         if ($this->isPost() || $this->isPut()) {
@@ -103,7 +104,7 @@ class PagesController extends AppAdminController
             if (empty($entity->errors())) {
                 $this->Pages->connection()->begin();
                 $page = $this->Pages->save($entity);
-                
+
                 $result = $this->saveRelationship($page, $this->formatInputData());
                 if($result['status']) {
                     $this->Pages->connection()->commit();

@@ -1,19 +1,13 @@
 <!-- Content Header (Page header) -->
 <?php
-$this->Html->scriptBlock('$(function () {
-    //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
-  });', ['block' => 'scriptBottom']);
+echo $this->Html->css('../system/plugins/select2/select2.min', ['block' => 'css']);
+echo $this->Html->script('../system/plugins/select2/select2.full.min', ['block' => 'scriptBottom']);
+echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBottom']);
 ?>
 <section class="content-header">
 <h1>
 System Users
 </h1>
-<ol class="breadcrumb">
-<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-<li><a href="#">Examples</a></li>
-<li class="active">Invoice</li>
-</ol>
 </section>
   <section class="content">
       <div class="row">
@@ -28,9 +22,19 @@ System Users
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
+                <?php echo $this->Form->input('fullname', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Fullname']); ?>
               	<?php echo $this->Form->input('email', ['readonly' => 'readonly', 'class' => 'form-control', 'type' => 'email', 'placeholder' => 'Email']); ?>
                 <?php echo $this->Form->input('password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
                 <?php echo $this->Form->input('confirm-password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
+                <div class="form-group"><label for="title">Role</label>
+                <?php
+                echo $this->Form->select(
+                    'role_id',
+                    $roles,
+                    ['class' => 'form-control select2']
+                    );
+                ?>
+                </div>
               </div>
               <!-- /.box-body -->
 

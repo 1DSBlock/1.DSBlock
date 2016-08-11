@@ -2,7 +2,7 @@
 			<div class="container">
 		<div class="logo_ft">
 			<a href="/" class="logo"><img src="/img/logo.png" alt="logo">
-				<br>LIVING CELL THERAPY IN GERMANY Younger – Healthier – Wealthier
+				<br>LIỆU PHÁP TẾ BÀO TƯƠI TẠI CHLB ĐỨC Trẻ hơn – Khoẻ hơn – Giàu có hơn
 			</a>
 			<div class="mxh">
 				<a href="https://www.facebook.com/tebaotuoi/?fref=ts" class="facebook" target="_blank" rel="nofollow"></a>
@@ -12,9 +12,9 @@
 		</div>
 					<div class="ground_info">
 			<div class="address">
-				<strong>Fresh Cell</strong>
+				<strong>Tế Bào Tươi</strong>
 				<br>
-				11A, P Street, Block My Giang 1A, Tan Phong Ward, Dist.7, HCMC
+				11A, đường P, Khu phố Mỹ Giang 1A, P.Tân Phong, Q.7, TP.HCM
 			</div>
 			<div class="mail">Email:<a href="mailto:clients@ds-block.com"> clients@ds-block.com </a>
 				<br> Website: <a href="/" target="_blank" rel="nofollow">www.ds-block.com</a>

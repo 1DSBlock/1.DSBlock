@@ -14,21 +14,21 @@ class PagesTable extends AppTable
     public function initialize(array $config)
     {
         parent::initialize($config);
-        
+
         $this->hasOne('PageArticles');
         $this->hasOne('PageUrls');
     }
-    
+
     public function validationDefault(Validator $validator) {
         $validator = parent::validationDefault($validator);
-    
+
         $validator
         ->requirePresence('name')
         ->notEmpty('name', 'Please fill this field');
-        
+
         return $validator;
     }
-    
+
     public function beforeDelete(Event $event, EntityInterface $entity, \ArrayObject $options) {
         $pageId = $entity->id;
         $this->objectUtils->useTables($this, ['PageArticles', 'PageUrls']);
@@ -36,10 +36,14 @@ class PagesTable extends AppTable
         $this->PageUrls->deleteAll(['page_id' => $pageId]);
         return true;
     }
-    
+
     public function getAllPages() {
+        Cache::disable();
         if(empty($articles = Cache::read(CACHE_PAGES))) {
-            $articles = $this->find()->contain(['PageUrls'])->combine('name', function ($entity) { return $entity->page_url->route_link; })->toArray();
+            $articles = $this->find()->contain(['PageUrls'])->combine(
+                'keylink',
+                function ($entity) { return $entity; }
+            )->toArray();
             Cache::write(CACHE_PAGES, $articles);
         }
         return $articles;
