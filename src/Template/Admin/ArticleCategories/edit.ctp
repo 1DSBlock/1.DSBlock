@@ -22,20 +22,21 @@ Article Categories
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit</h3>
+              <h3 class="box-title"><?php echo __('Edit'); ?></h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
               	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
+              	<?php echo $this->Form->input('alias', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Alias']); ?>
                 <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-default back">Back</button>
+                <button type="submit" class="btn btn-primary"><?php echo __('Save'); ?></button>
+                <button type="button" class="btn btn-default back"><?php echo __('Back'); ?></button>
               </div>
               <?php echo $this->Form->hidden('id'); ?>
             <?php echo $this->Form->end();?>

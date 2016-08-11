@@ -64,7 +64,7 @@
 
 <?php 
 echo $this->Html->script('../system/plugins/jQuery/jquery-2.2.3.min');
-echo $this->Html->script('../system/bootstrap/js/bootstrap.min.');
+echo $this->Html->script('../system/bootstrap/js/bootstrap.min');
 echo $this->Html->script('../system/plugins/iCheck/icheck.min');
 ?>
 <script>

@@ -15,7 +15,7 @@ trait CrudTrait {
     {
         $data = $this->request->data;
         
-        if(!empty($data['title'])) {
+        if(!empty($data['title']) && empty($data['alias'])) {
             $data['alias'] = Inflector::slug(Inflector::dasherize($data['title']));
         }
         

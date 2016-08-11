@@ -15,7 +15,7 @@
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="<?php echo __('Search'); ?>">
 
                   <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -48,8 +48,8 @@
                   <td><img src="<?= $item->image_full_path ?>" class="img-rounded" width="50" />&nbsp;<?= $item->name; ?></td>
                   <td><?= $item->created; ?></td>
                   <td>
-                  <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>
-                  <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>">Delete</button>
+                  <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>"><?php echo __('Edit'); ?></button>
+                  <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>"><?php echo __('Xoá'); ?></button>
                   </td>
                 </tr>
                 <?php endforeach; ?>
@@ -76,7 +76,7 @@
     Are you sure?
   </div>
   <div class="modal-footer">
-    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete"><?php echo __('Xoá'); ?></button>
     <button type="button" data-dismiss="modal" class="btn">Cancel</button>
   </div>
 </div>

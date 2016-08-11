@@ -22,7 +22,7 @@ Users
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Add new</h3>
+              <h3 class="box-title"><?php echo __('Add new'); ?></h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -34,8 +34,8 @@ Users
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-default back">Back</button>
+                <button type="submit" class="btn btn-primary"><?php echo __('Save'); ?></button>
+                <button type="button" class="btn btn-default back"><?php echo __('Back'); ?></button>
               </div>
             <?php echo $this->Form->end();?>
           </div>

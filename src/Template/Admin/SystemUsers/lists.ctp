@@ -19,7 +19,7 @@
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="<?php echo __('Search'); ?>">
 
                   <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="box-header">
-            <button type="button" class="btn btn-primary" id="addNew">Add +</button>
+            <button type="button" class="btn btn-primary" id="addNew"><?php echo __('Add +'); ?></button>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
@@ -52,8 +52,8 @@
                   <td><?= $item->email; ?></td>
                   <td><?= $item->role->role; ?></td>
                   <td>
-                  <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>">Edit</button>
-                  <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>">Delete</button>
+                  <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>"><?php echo __('Edit'); ?></button>
+                  <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>"><?php echo __('Xoá'); ?></button>
                   </td>
                 </tr>
                 <?php endforeach; ?>

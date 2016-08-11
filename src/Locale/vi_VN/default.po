@@ -1,0 +1,26 @@
+msgid "Add +"
+msgstr "Thêm mới +"
+
+msgid "Add new"
+msgstr "Thêm mới"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Back"
+msgstr "Trở lại"
+
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+msgid "Delete"
+msgstr "Xoá"
+
+msgid "Change password"
+msgstr "Thay đổi mật khẩu"
+
+msgid "Sign out"
+msgstr "Đăng xuất"
+
+msgid "Search"
+msgstr "Tìm kiếm"

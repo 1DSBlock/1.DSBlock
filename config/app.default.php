@@ -38,8 +38,8 @@ return [
      */
     'App' => [
         'namespace' => 'App',
-        'encoding' => env('APP_ENCODING', 'UTF-8'),
-        'defaultLocale' => env('APP_DEFAULT_LOCALE', 'en_US'),
+        'encoding' => 'UTF-8',
+        'defaultLocale' => 'vi_VN',
         'base' => false,
         'dir' => 'src',
         'webroot' => 'webroot',
