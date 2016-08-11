@@ -21,12 +21,9 @@ class ArticlesController extends AppController
             $this->render('article');
         } elseif(!empty($cid)) {
             $blogs = $this->Articles->find()->where(['article_category_id' => $cid]);
-
             $this->objectUtils->useTables($this, ['ArticleCategories']);
             $category = $this->ArticleCategories->get($cid);
-
             $this->set(compact('blogs', 'category'));
-
             $this->render($category->alias);
         }
     }

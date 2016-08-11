@@ -24,3 +24,6 @@ msgstr "Đăng xuất"
 
 msgid "Search"
 msgstr "Tìm kiếm"
+
+msgid "Sign in"
+msgstr "Đăng nhập"

@@ -38,7 +38,6 @@ class PagesTable extends AppTable
     }
 
     public function getAllPages() {
-        Cache::disable();
         if(empty($articles = Cache::read(CACHE_PAGES))) {
             $articles = $this->find()->contain(['PageUrls'])->combine(
                 'keylink',

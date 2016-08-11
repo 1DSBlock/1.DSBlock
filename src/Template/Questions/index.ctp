@@ -1,6 +1,6 @@
 <div class="breadcrumb_category">
     <div class="container">
-        <span class="name_cate_parent">Q & A</span>
+        <span class="name_cate_parent">CÂU HỎI THƯỜNG GẶP</span>
     </div>
 </div>
 <div class="wrapper_color">
