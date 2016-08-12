@@ -12,16 +12,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Products Manager</h3>
-
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="<?php echo __('Search'); ?>">
-
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </div>
+              <?php echo $this->element('Admin/search'); ?>
             </div>
             <div class="box-header">
             <button type="button" class="btn btn-primary" id="addNew">Add +</button>
@@ -30,9 +21,9 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Created</th>
+                  <th><?php echo $this->Paginator->sort('id', __('ID')); ?></th>
+                  <th><?php echo $this->Paginator->sort('name', __('Name')); ?></th>
+                  <th><?php echo $this->Paginator->sort('created', __('Created')); ?></th>
                   <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>
@@ -57,15 +48,7 @@
             </div>
             <!-- /.box-body -->
             <!-- /.box-body -->
-            <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
-            </div>
+            <?php echo $this->element('Admin/paginate'); ?>
           </div>
           <!-- /.box -->
         </div>

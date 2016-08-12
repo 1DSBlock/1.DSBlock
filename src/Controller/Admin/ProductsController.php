@@ -6,12 +6,10 @@ use Cake\ORM\TableRegistry;
 
 class ProductsController extends AppAdminController
 {
+    protected $keyword = 'name';
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,
-        'order' => [
-            'Products.title' => 'asc'
-        ]
     ];
 
     public function beforeFilter(Event $event)

@@ -7,7 +7,7 @@ $this->Html->scriptBlock('$(function () {
 ?>
 <section class="content-header">
 <h1>
-Users
+<?php echo __('Medical Histories Manager') ?>
 </h1>
 </section>
   <section class="content">
@@ -23,8 +23,7 @@ Users
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-                <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+              	<?php echo $this->Form->textarea('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
               </div>
               <!-- /.box-body -->
 

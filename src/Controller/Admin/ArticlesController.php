@@ -6,12 +6,10 @@ use Cake\ORM\TableRegistry;
 
 class ArticlesController extends AppAdminController
 {
+    protected $keyword = 'title';
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,
-        'order' => [
-            'Articles.title' => 'asc'
-        ],
         'contain' => ['ArticleCategories']
     ];
 
@@ -19,7 +17,7 @@ class ArticlesController extends AppAdminController
     {
         parent::beforeFilter($event);
     }
-    
+
     public function add()
     {
         parent::add();
@@ -27,7 +25,7 @@ class ArticlesController extends AppAdminController
         $categories = $category->find()->combine('id', 'title')->toArray();
         $this->set(compact('categories'));
     }
-    
+
     public function edit($id = null, $return = false)
     {
         parent::edit($id);

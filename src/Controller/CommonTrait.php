@@ -61,6 +61,6 @@ trait CommonTrait
             'element' => $element,
             'params' => $params
         ];
-        $this->Flash->set( $msg, $options );
+        $this->Flash->set($msg, $options );
     }
 }

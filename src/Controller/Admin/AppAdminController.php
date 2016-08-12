@@ -18,6 +18,8 @@ class AppAdminController extends Controller
     protected $utils;
     protected $objectUtils;
 
+    protected $keyword;
+
     public $paginate = [
         'limit' => PAGINATE_LIMIT
     ];
@@ -46,16 +48,16 @@ class AppAdminController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Csrf');
         $this->loadComponent('Paginator');
-        
+
         $this->viewBuilder()->layout('system_default');
-        
+
         $this->utils = Utils::getInstance();
         $this->objectUtils = ObjectUtils::getInstance();
     }
 
     /**
      * beforeRender all things need to run before rendering
-     * 
+     *
      * @param Event $event
      *            Cake Event
      * @return void
@@ -67,7 +69,7 @@ class AppAdminController extends Controller
 
     /**
      * beforeFilter all things need to run before running an action
-     * 
+     *
      * @param Event $event
      *            an cake event
      * @return \Cake\Network\Response|null @SuppressWarnings(PHPMD.StaticAccess)
@@ -80,7 +82,7 @@ class AppAdminController extends Controller
 
     /**
      * configureAuth auth configurations
-     * 
+     *
      * @return void
      */
     protected function configureAuth()
@@ -117,12 +119,12 @@ class AppAdminController extends Controller
                 'controller' => 'SystemUsers',
                 'action' => 'dashboard'
             ],
-            // 'flash' => [
-            // 'element' => 'default'
-            // ],
+            'flash' => [
+                'element' => 'dsblock_message'
+            ],
             'authError' => __('Your session has ended. Please log back in.')
         ];
-        
+
         $this->Auth->config($adminAuth);
     }
 
@@ -132,7 +134,7 @@ class AppAdminController extends Controller
         // if (isset($user['role']) && $user['role'] === 'admin') {
         // return true;
         // }
-        
+
         // Default deny
         return true;
     }

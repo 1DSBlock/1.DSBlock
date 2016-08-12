@@ -9,6 +9,7 @@
         <?php
         $index = 0;
         foreach($questions as $question) :
+            $idx = ($index + 1) + (($page - 1) * $totalPage);
         ?>
             <?php if($index && $index % 2 == 0) :
             ?>
@@ -18,7 +19,7 @@
             <div class="wrap_question_anwser_item">
                 <div class="question_anwser_item">
                     <div class="question">
-                        <span class="number"><?php echo $index+1; ?></span>
+                        <span class="number"><?php echo $idx; ?></span>
                         <p><?php echo $question->name; ?></p>
                     </div>
                     <div class="anwser">
@@ -31,5 +32,6 @@
         endforeach;
         ?>
         </div>
+        <?php echo $this->element('paginate'); ?>
     </div>
 </div>

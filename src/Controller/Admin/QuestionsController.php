@@ -6,11 +6,12 @@ use Cake\ORM\TableRegistry;
 
 class QuestionsController extends AppAdminController
 {
+    protected $keyword = 'name';
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,
-        'order' => [
-            'Questions.title' => 'asc'
+        'sortWhitelist' => [
+            'id', 'name'
         ]
     ];
 

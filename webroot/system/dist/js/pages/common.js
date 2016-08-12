@@ -23,6 +23,6 @@ $(function() {
 	});
 
 	$('.back').click(function() {
-		location.href = 'lists';
+		window.history.back();
 	});
 });

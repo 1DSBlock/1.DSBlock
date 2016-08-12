@@ -8,17 +8,26 @@ trait CrudTrait {
     public function lists()
     {
         $table = $this->name;
+
+        $keyword = $this->request->data('keyword');
+        if(!empty($keyword)) {
+            $key = $table . '.' . $this->keyword . ' LIKE';
+            $this->paginate = [
+                'conditions' => [
+                    $key => '%' . $keyword . '%'
+                ]
+            ];
+        }
         $this->set('rows', $this->paginate($this->$table));
     }
 
     protected function formatInputData()
     {
         $data = $this->request->data;
-        
         if(!empty($data['title']) && empty($data['alias'])) {
             $data['alias'] = Inflector::slug(Inflector::dasherize($data['title']));
         }
-        
+
         return $data;
     }
 
@@ -33,10 +42,12 @@ trait CrudTrait {
             }
             if (empty($entity->errors())) {
                 $result = $this->$table->save($entity);
-                
+
                 $params = $this->request->params;
                 $controller = $params['controller'];
                 $prefix = $params['prefix'];
+
+                $this->setFlash("Saved successfully!!!", ['class' => 'success']);
                 return $this->redirect("$prefix/$controller/lists");
             } else {
                 $this->set(compact('entity'));
@@ -49,7 +60,7 @@ trait CrudTrait {
     {
         $table = $this->name;
         $entityClass = Inflector::singularize($this->$table->alias());
-        
+
         $entity = $this->utils->getEntity($entityClass);
         $this->set(compact('entity'));
         $this->save();
@@ -69,15 +80,15 @@ trait CrudTrait {
         $controller = $params['controller'];
         $prefix = $params['prefix'];
         if (! $id) {
-            $this->Flash->error("Not exists this id: " . $id);
+            $this->setFlash("Not exists this id: " . $id);
             return $this->redirect("$prefix/$controller/lists");
         } else {
             $entity = $this->getObject($id);
-            
+
             $this->set(compact('entity'));
             $this->save($entity);
         }
-        
+
         if($return) {
             return $entity;
         }
@@ -88,15 +99,15 @@ trait CrudTrait {
         $params = $this->request->params;
         $controller = $params['controller'];
         $prefix = $params['prefix'];
-        
+
         $id = (int) $id;
         if (! $id) {
-            $this->Flash->error("Not exists this id: " . $id);
+            $this->setFlash("Not exists this id: " . $id);
         } else {
             $table = $this->name;
             $entity = $this->$table->get($id);
             $this->$table->delete($entity);
-            $this->Flash->success("Deleted successful this id: " . $id);
+            $this->setFlash("Deleted successful this id: " . $id, ['class' => 'success']);
         }
         $this->redirect("$prefix/$controller/lists");
     }

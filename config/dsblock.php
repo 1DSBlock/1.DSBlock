@@ -1,2 +1,2 @@
 <?php
-$config['Paginate']['limit'] = 25;
+$config['Paginate']['limit'] = 10;

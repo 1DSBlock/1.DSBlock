@@ -27,3 +27,9 @@ msgstr "Tìm kiếm"
 
 msgid "Sign in"
 msgstr "Đăng nhập"
+
+msgid "Medical History"
+msgstr "Bệnh sử"
+
+msgid "Medical Histories Manager"
+msgstr "Quản lý bệnh sử"

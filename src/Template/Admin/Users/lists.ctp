@@ -3,11 +3,6 @@
       <h1>
        Users
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
     </section>
     <!-- Main content -->
     <section class="content">
@@ -34,8 +29,8 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th>ID</th>
-                  <th>Email</th>
+                  <th><<?php echo $this->Paginator->sort('id', __('ID')); ?></th>
+                  <th><?php echo $this->Paginator->sort('email', __('Email')); ?></th>
                   <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>
@@ -43,7 +38,7 @@
                   <td colspan="3" align="center">No data</td>
                 </tr>
                 <?php endif;?>
-                <?php 
+                <?php
                 foreach($rows as $item) :
                 ?>
                 <tr>
@@ -59,15 +54,7 @@
             </div>
             <!-- /.box-body -->
             <!-- /.box-body -->
-            <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
-            </div>
+            <?php echo $this->element('Admin/paginate'); ?>
           </div>
           <!-- /.box -->
         </div>

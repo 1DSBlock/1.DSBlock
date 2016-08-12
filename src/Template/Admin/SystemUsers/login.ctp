@@ -7,7 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <?php 
+  <?php
   echo $this->Html->css('../system/bootstrap/css/bootstrap.min');
   ?>
   <!-- Font Awesome -->
@@ -15,8 +15,8 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  
-  <?php 
+
+  <?php
   echo $this->Html->css('../system/dist/css/AdminLTE.min');
   echo $this->Html->css('../system/plugins/iCheck/square/blue');
   ?>
@@ -36,6 +36,7 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
   <?= $this->Flash->render('auth') ?>
+   <?= $this->Flash->render() ?>
     <p class="login-box-msg">Sign in to start your session</p>
 
     <?php echo $this->Form->create(null); ?>
@@ -62,7 +63,7 @@
 </div>
 <!-- /.login-box -->
 
-<?php 
+<?php
 echo $this->Html->script('../system/plugins/jQuery/jquery-2.2.3.min');
 echo $this->Html->script('../system/bootstrap/js/bootstrap.min');
 echo $this->Html->script('../system/plugins/iCheck/icheck.min');

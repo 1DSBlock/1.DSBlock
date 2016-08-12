@@ -7,11 +7,10 @@ use Cake\Cache\Cache;
 
 class PagesController extends AppAdminController
 {
+    protected $keyword = 'name';
+
     public $paginate = [
         'limit' => PAGINATE_LIMIT,
-        'order' => [
-            'Pages.name' => 'asc'
-        ],
         'contain' => ['PageArticles', 'PageUrls']
     ];
 
