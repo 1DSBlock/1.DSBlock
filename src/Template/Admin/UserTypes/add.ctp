@@ -17,7 +17,7 @@
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
-              	<?php echo $this->Form->input('name', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
+              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
               </div>
               <!-- /.box-body -->
 
