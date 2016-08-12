@@ -3,17 +3,10 @@ $this->Html->scriptBlock('$(function () {
     $(\'[data-toggle="tooltip"]\').tooltip();
   });', ['block' => 'scriptBottom']);
 ?>
-<style media="screen" type="text/css">
-    td {
-       max-width: 120px;
-       white-space: nowrap;
-       text-overflow: ellipsis;
-     }
-</style>
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Q & A
+        <?= __('Questions') ?>
       </h1>
 
     </section>
@@ -23,11 +16,11 @@ $this->Html->scriptBlock('$(function () {
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Questions Manager</h3>
+              <h3 class="box-title"><?= __('Questions Manager') ?></h3>
               <?php echo $this->element('Admin/search'); ?>
             </div>
             <div class="box-header">
-            <button type="button" class="btn btn-primary" id="addNew">Add +</button>
+            <button type="button" class="btn btn-primary" id="addNew"><?php echo __('Add +'); ?></button>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
@@ -47,7 +40,18 @@ $this->Html->scriptBlock('$(function () {
                 ?>
                 <tr>
                   <td><?= $item->id; ?></td>
-                  <td><a href="#" data-toggle="tooltip" title="<?= $item->name; ?>"><?= $item->name; ?></a></td>
+                  <td><a href="#" data-toggle="tooltip" title="<?= $item->name; ?>">
+                  <?php
+                  echo $this->Text->truncate(
+                      $item->name,
+                      100,
+                      [
+                          'ellipsis' => '...',
+                          'exact' => false
+                      ]
+                  );
+                  ?>
+                  </a></td>
                   <td>
                   <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>"><?php echo __('Edit'); ?></button>
                   <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>"><?php echo __('Xoá'); ?></button>

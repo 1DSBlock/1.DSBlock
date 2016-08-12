@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Forms
+        <?= __('Forms') ?>
       </h1>
     </section>
     <!-- Main content -->
@@ -10,7 +10,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Forms Manager</h3>
+              <h3 class="box-title"><?= __('Forms Manager') ?></h3>
               <?php echo $this->element('Admin/search'); ?>
             </div>
             <div class="box-header">

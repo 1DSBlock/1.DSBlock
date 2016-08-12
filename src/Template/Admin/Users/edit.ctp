@@ -7,7 +7,7 @@ $this->Html->scriptBlock('$(function () {
 ?>
 <section class="content-header">
 <h1>
-Users
+<?= __('Customers') ?>
 </h1>
 </section>
   <section class="content">

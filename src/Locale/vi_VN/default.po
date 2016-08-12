@@ -33,3 +33,51 @@ msgstr "Bệnh sử"
 
 msgid "Medical Histories Manager"
 msgstr "Quản lý bệnh sử"
+
+msgid "UserTypes"
+msgstr "Loại người dùng"
+
+msgid "UserTypes Manager"
+msgstr "Quản lý loại người dùng"
+
+msgid "Customers Manager"
+msgstr "Quản lý người dùng"
+
+msgid "Customers"
+msgstr "Người dùng"
+
+msgid "Questions Manager"
+msgstr "Quản lý câu hỏi thường gặp"
+
+msgid "Questions"
+msgstr "Câu hỏi thường gặp"
+
+msgid "Products Manager"
+msgstr "Quản lý sản phẩm"
+
+msgid "Products"
+msgstr "Sản phẩm"
+
+msgid "Articles Manager"
+msgstr "Quản lý bài viết"
+
+msgid "Articles"
+msgstr "Bài viết"
+
+msgid "Article Categories Manager"
+msgstr "Quản lý thể loại"
+
+msgid "Article Categories"
+msgstr "Thể loại"
+
+msgid "Forms Manager"
+msgstr "Quản lý biểu mẫu"
+
+msgid "Forms"
+msgstr "Biểu mẫu"
+
+msgid "MAIN NAVIGATION"
+msgstr "CHỨC NĂNG CHÍNH"
+
+msgid "SYSTEM"
+msgstr "HỆ THỐNG"

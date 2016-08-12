@@ -1,13 +1,7 @@
 <!-- Content Header (Page header) -->
-<?php
-$this->Html->scriptBlock('$(function () {
-    //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
-  });', ['block' => 'scriptBottom']);
-?>
 <section class="content-header">
 <h1>
-<?= __('Article Categories') ?>
+<?php echo __('UserTypes') ?>
 </h1>
 </section>
   <section class="content">
@@ -23,9 +17,7 @@ $this->Html->scriptBlock('$(function () {
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-              	<?php echo $this->Form->input('alias', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Alias']); ?>
-                <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+              	<?php echo $this->Form->input('name', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
               </div>
               <!-- /.box-body -->
 

@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Products
+        <?= __('Products') ?>
       </h1>
 
     </section>
@@ -11,11 +11,11 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Products Manager</h3>
+              <h3 class="box-title"><?= __('Products Manager') ?></h3>
               <?php echo $this->element('Admin/search'); ?>
             </div>
             <div class="box-header">
-            <button type="button" class="btn btn-primary" id="addNew">Add +</button>
+            <button type="button" class="btn btn-primary" id="addNew"><?php echo __('Add +'); ?></button>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">

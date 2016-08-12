@@ -12,7 +12,7 @@ echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBot
 ?>
 <section class="content-header">
 <h1>
-Articles
+<?= __('Articles') ?>
 </h1>
 </section>
   <section class="content">

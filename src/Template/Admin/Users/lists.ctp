@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Users
+       <?= __('Customers') ?>
       </h1>
     </section>
     <!-- Main content -->
@@ -10,7 +10,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Users Manager</h3>
+              <h3 class="box-title"><?= __('Customers Manager') ?></h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -29,7 +29,7 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th><<?php echo $this->Paginator->sort('id', __('ID')); ?></th>
+                  <th><?php echo $this->Paginator->sort('id', __('ID')); ?></th>
                   <th><?php echo $this->Paginator->sort('email', __('Email')); ?></th>
                   <th></th>
                 </tr>

@@ -7,7 +7,7 @@ $this->Html->scriptBlock('$(function () {
 ?>
 <section class="content-header">
 <h1>
-Q & A
+<?= __('Questions') ?>
 </h1>
 </section>
   <section class="content">

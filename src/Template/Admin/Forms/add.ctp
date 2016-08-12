@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
 <h1>
-Forms
+<?= __('Forms') ?>
 </h1>
 </section>
   <section class="content">
