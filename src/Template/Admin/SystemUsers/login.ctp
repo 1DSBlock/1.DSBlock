@@ -37,8 +37,6 @@
   <div class="login-box-body">
   <?= $this->Flash->render('auth') ?>
    <?= $this->Flash->render() ?>
-    <p class="login-box-msg">Sign in to start your session</p>
-
     <?php echo $this->Form->create(null); ?>
       <div class="form-group has-feedback">
         <input type="email" name="email" class="form-control" placeholder="Email">

@@ -25,7 +25,10 @@ class Utils {
 
     public function formatDate($date, $format = 'yyyy-MM-dd')
     {
-        $now = Time::parse($date);
+        $now = Time::now();
+
+        list($d, $m, $y) = explode('/', $date);
+        $now->setDate($y, $m, $d);
         return $now->i18nFormat($format);
     }
 }

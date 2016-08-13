@@ -30,7 +30,7 @@ class UsersTable extends AppTable
 
         $validator->add('email', [
             'unique' => [
-                'message'   => 'This value is already used',
+                'message'   => 'This email is already used',
                 'provider'  => 'table',
                 'rule'      => 'validateUnique'
             ]

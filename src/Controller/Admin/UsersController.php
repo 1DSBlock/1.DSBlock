@@ -49,4 +49,16 @@ class UsersController extends AppAdminController
         $userTypes = $this->UserTypes->find()->combine('id', 'title')->toArray();
         $this->set(compact('userTypes'));
     }
+
+    public function autoComplete()
+    {
+        $keyword = $this->request->query('q');
+
+        $data = [
+            ['id' => 0, 'text' => 'enhancement'],
+            ['id' => 1, 'text' => 'bug'],
+            ['id' => 2, 'text' => 'duplicate'],
+        ];
+        return $this->sendAjax(0, json_encode($data));
+    }
 }

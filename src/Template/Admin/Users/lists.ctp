@@ -46,6 +46,7 @@
                   <td><?= $item->phone; ?></td>
                   <td><?= $item->created_full; ?></td>
                   <td>
+                  <button type="button" class="btn-xs btn-info detail-item" data-id="<?= $item->id; ?>"><?php echo __('Detail'); ?></button>
                   <button type="button" class="btn-xs btn-warning edit-item" data-id="<?= $item->id; ?>"><?php echo __('Edit'); ?></button>
                   <button type="button" class="btn-xs btn-danger delete-item" data-id="<?= $item->id; ?>"><?php echo __('Delete'); ?></button>
                   </td>

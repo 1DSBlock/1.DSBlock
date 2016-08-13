@@ -18,6 +18,8 @@ class AppAdminController extends Controller
     protected $utils;
     protected $objectUtils;
 
+    protected $ajaxResponse = [];
+
     protected $keywords = [];
 
     public $paginate = [

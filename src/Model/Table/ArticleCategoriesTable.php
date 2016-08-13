@@ -1,5 +1,5 @@
 <?php
-// src/Model/Table/ArticlesTable.php
+// src/Model/Table/ArticleCategoriesTable.php
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
@@ -10,13 +10,13 @@ class ArticleCategoriesTable extends AppTable
     public function initialize(array $config)
     {
         parent::initialize($config);
-        
+
         $this->hasMany('Articles');
     }
-    
+
     public function validationDefault(Validator $validator) {
         $validator = parent::validationDefault($validator);
-    
+
         $validator
         ->requirePresence('title')
         ->notEmpty('title', 'Please fill this field')

@@ -23,6 +23,9 @@ msgstr "Admin :: Quản lý loại người dùng"
 msgid "Admin/Users"
 msgstr "Admin :: Quản lý người dùng"
 
+msgid "Admin/UserTreatments"
+msgstr "Admin :: Quản lý quá trình chữa bệnh"
+
 #### CONTENT ####
 msgid "Add +"
 msgstr "Thêm mới +"
@@ -38,6 +41,9 @@ msgstr "Trở lại"
 
 msgid "Edit"
 msgstr "Chỉnh sửa"
+
+msgid "Detail"
+msgstr "Chi tiết"
 
 msgid "Delete"
 msgstr "Xoá"
@@ -101,6 +107,12 @@ msgstr "Quản lý biểu mẫu"
 
 msgid "Forms"
 msgstr "Biểu mẫu"
+
+msgid "UserTreatments"
+msgstr "Quá trình chữa bệnh"
+
+msgid "UserTreatments Manager"
+msgstr "Quản lý quá trình chữa bệnh"
 
 msgid "MAIN NAVIGATION"
 msgstr "CHỨC NĂNG CHÍNH"

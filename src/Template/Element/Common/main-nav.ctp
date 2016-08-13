@@ -19,7 +19,15 @@
 				<li class=""><a href="<?= $this->Url->build($pages['introductions']->page_url->route_link) ?>">GIỚI THIỆU</a><span></span></li>
 				<li class=""><a href="<?= $this->Url->build($pages['forms']->page_url->route_link) ?>">FORMS</a><span></span></li>
 				<li class=""><a href="<?= $this->Url->build($pages['qa']->page_url->route_link) ?>">CÂU HỎI<br>THƯỜNG GẶP</a><span></span></li>
-				<li class=""><a href="<?= $this->Url->build($pages['login']->page_url->route_link) ?>">ĐĂNG NHẬP</a><span></span></li>
+			<?php if(empty($this->request->session()->check('Auth.User'))) : ?>
+				<li class=""><a href="<?= $this->Url->build($pages['login']->page_url->route_link) ?>">ĐĂNG NHẬP</a><span></span>
+				</li>
+			<?php else: ?>
+				<li class="">
+				<a href="#">Chào <?php echo $this->request->session()->read('Auth.User.fullname'); ?></a>,
+				<a href="<?= $this->Url->build($pages['logout']->page_url->route_link) ?>">THOÁT</a><span></span>
+				</li>
+			<?php endif; ?>
 				<div class="clearfix"></div>
 			</ul>
 			<div class="clearfix"></div>

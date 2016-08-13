@@ -125,7 +125,7 @@ class AppController extends Controller
                     ]
                 ],
                 'loginAction' => ['controller' => 'users', 'action' => 'login'],
-                'loginRedirect' => ['controller' => 'users', 'action' => 'dashboard'],
+                'loginRedirect' => ['controller' => 'home', 'action' => 'index'],
 //                 'flash' => [
 //                     'element' => 'ec_message'
 //                 ],
