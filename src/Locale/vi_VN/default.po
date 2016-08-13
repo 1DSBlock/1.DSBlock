@@ -1,3 +1,29 @@
+#### TITLE ####
+msgid "Admin/Questions"
+msgstr "Admin :: Quản lý câu hỏi"
+
+msgid "Admin/Articles"
+msgstr "Admin :: Quản lý bài viết"
+
+msgid "Admin/ArticleCategories"
+msgstr "Admin :: Quản lý thể loại"
+
+msgid "Admin/Forms"
+msgstr "Admin :: Quản lý biểu mẫu"
+
+msgid "Admin/Products"
+msgstr "Admin :: Quản lý sản phẩm"
+
+msgid "Admin/MedicalHistories"
+msgstr "Admin :: Quản lý bệnh sử"
+
+msgid "Admin/UserTypes"
+msgstr "Admin :: Quản lý loại người dùng"
+
+msgid "Admin/Users"
+msgstr "Admin :: Quản lý người dùng"
+
+#### CONTENT ####
 msgid "Add +"
 msgstr "Thêm mới +"
 

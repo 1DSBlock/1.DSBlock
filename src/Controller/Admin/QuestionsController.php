@@ -6,7 +6,7 @@ use Cake\ORM\TableRegistry;
 
 class QuestionsController extends AppAdminController
 {
-    protected $keyword = 'name';
+    protected $keywords = ['name'];
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,

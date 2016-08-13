@@ -20,9 +20,9 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th><<?php echo $this->Paginator->sort('id', __('ID')); ?></th>
+                  <th><?php echo $this->Paginator->sort('id', __('ID')); ?></th>
                   <th><?php echo $this->Paginator->sort('email', __('Email')); ?></th>
-                  <th><?php echo $this->Paginator->sort('Roles.role', __('role')); ?></th>
+                  <th><?php echo $this->Paginator->sort('Roles.role', __('Role')); ?></th>
                   <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>

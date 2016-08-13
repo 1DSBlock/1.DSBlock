@@ -5,7 +5,7 @@ use Cake\Event\Event;
 
 class ArticleCategoriesController extends AppAdminController
 {
-    protected $keyword = 'title';
+    protected $keywords = ['title'];
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,

@@ -18,12 +18,35 @@ class UserTypesTable extends AppTable
         $validator = parent::validationDefault($validator);
 
         $validator
-        ->requirePresence('title')
-        ->notEmpty('title', 'Please fill this field')
-        ->add('title', [
+        ->requirePresence('email')
+        ->add('email', 'validFormat', [
+            'rule' => 'email',
+            'message' => 'E-mail must be valid'
+        ]);
+
+        $validator->add('email', [
+            'unique' => [
+                'message'   => 'This value is already used',
+                'provider'  => 'table',
+                'rule'      => 'validateUnique'
+            ]
+        ]);
+
+        $validator
+        ->requirePresence('confirm-password', 'create', 'A password is required')
+        ->allowEmpty('confirm-password', 'update')
+        ->add('confirm-password', 'no-misspelling', [
+            'rule' => ['compareWith', 'password'],
+            'message' => 'Passwords are not equal',
+        ]);
+
+        $validator
+        ->requirePresence('password', 'create', 'A password is required')
+        ->allowEmpty('password', 'update')
+        ->add('password', [
             'length' => [
                 'rule' => ['minLength', 5],
-                'message' => 'Title need to be at least 5 characters long',
+                'message' => 'Password need to be at least 5 characters long',
             ]
         ]);
         return $validator;

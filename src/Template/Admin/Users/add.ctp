@@ -1,8 +1,13 @@
 <!-- Content Header (Page header) -->
 <?php
-$this->Html->scriptBlock('$(function () {
+echo $this->Html->css('../system/plugins/select2/select2.min', ['block' => 'css']);
+echo $this->Html->script('../system/plugins/select2/select2.full.min', ['block' => 'scriptBottom']);
+echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBottom']);
+echo $this->Html->scriptBlock('$(function () {
     //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
+    $("#birthday").datepicker({
+      format: "dd/mm/yyyy"
+    });
   });', ['block' => 'scriptBottom']);
 ?>
 <section class="content-header">
@@ -23,8 +28,21 @@ $this->Html->scriptBlock('$(function () {
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-                <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+              	<?php echo $this->Form->input('fullname', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Fullname']); ?>
+                <?php echo $this->Form->input('email', ['class' => 'form-control', 'type' => 'email', 'placeholder' => 'Email']); ?>
+                <?php echo $this->Form->input('password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
+                <?php echo $this->Form->input('confirm-password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
+                <div class="form-group"><label for="title"><?= __('UserTypes') ?></label>
+                <?php
+                echo $this->Form->select(
+                    'user_type_id',
+                    $userTypes,
+                    ['class' => 'form-control select2']
+                    );
+                ?>
+                </div>
+                <?php echo $this->Form->input('birthday', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Birthday']); ?>
+                <?php echo $this->Form->input('phone', ['class' => 'form-control', 'type' => 'number', 'placeholder' => 'Phone']); ?>
               </div>
               <!-- /.box-body -->
 

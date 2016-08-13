@@ -5,7 +5,7 @@ use Cake\Event\Event;
 
 class SystemUsersController extends AppAdminController
 {
-    protected $keyword = 'fullname';
+    protected $keywords = ['fullname'];
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,

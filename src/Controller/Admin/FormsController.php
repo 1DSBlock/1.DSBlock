@@ -5,7 +5,7 @@ use Cake\Event\Event;
 
 class FormsController extends AppAdminController
 {
-    protected $keyword = 'name';
+    protected $keywords = ['description'];
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,

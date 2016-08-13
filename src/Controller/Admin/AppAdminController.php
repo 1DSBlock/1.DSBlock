@@ -18,7 +18,7 @@ class AppAdminController extends Controller
     protected $utils;
     protected $objectUtils;
 
-    protected $keyword;
+    protected $keywords = [];
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT

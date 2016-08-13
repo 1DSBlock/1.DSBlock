@@ -5,7 +5,7 @@ use Cake\Event\Event;
 
 class MedicalHistoriesController extends AppAdminController
 {
-    protected $keyword = 'description';
+    protected $keywords = ['description'];
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,

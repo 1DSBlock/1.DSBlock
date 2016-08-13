@@ -11,12 +11,21 @@ trait CrudTrait {
 
         $keyword = $this->request->data('keyword');
         if(!empty($keyword)) {
-            $key = $table . '.' . $this->keyword . ' LIKE';
-            $this->paginate = [
+            $this->paginate += [
                 'conditions' => [
-                    $key => '%' . $keyword . '%'
+                    'OR' => []
                 ]
             ];
+            foreach($this->keywords as $element) {
+                $split = explode('.', $element);
+
+                $key = $element . ' LIKE';
+                if(count($split) < 2) {
+                    $key = $table . '.' . $element . ' LIKE';
+                }
+
+                $this->paginate['conditions']['OR'][$key] = '%' . $keyword . '%';
+            }
         }
         $this->set('rows', $this->paginate($this->$table));
     }
