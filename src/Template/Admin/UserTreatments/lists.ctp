@@ -26,7 +26,7 @@
                   <th><?php echo $this->Paginator->sort('contract_sign_date', __('Contract Signature Date')); ?></th>
                   <th><?php echo $this->Paginator->sort('contract_price', __('Contract Price')); ?></th>
                   <th><?php echo $this->Paginator->sort('treatment_date', __('Treatment Date')); ?></th>
-                  <th><?php echo $this->Paginator->sort('Owners.fullname', __('Owner Created')); ?></th>
+                  <th><?php echo $this->Paginator->sort('Owners.fullname', __('Saller')); ?></th>
                   <th></th>
                 </tr>
                 <?php if(!$rows->count()) : ?>

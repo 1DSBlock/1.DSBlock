@@ -37,25 +37,26 @@ class UserTreatmentsController extends AppAdminController
             $data['treatment_date'] = $this->utils->formatDate($data['treatment_date']);
         }
 
-        $data['owner_id'] = $this->Auth->user('id');
         return $data;
     }
 
     public function add()
     {
         parent::add();
-        $this->objectUtils->useTables($this, ['Products', 'Users']);
+        $this->objectUtils->useTables($this, ['Products', 'Users', 'SystemUsers']);
         $products = $this->Products->find()->combine('id', 'name')->toArray();
         $users = $this->Users->find()->combine('id', 'fullname')->toArray();
-        $this->set(compact('products', 'users'));
+        $sallers = $this->SystemUsers->getSallerList();
+        $this->set(compact('products', 'users', 'sallers'));
     }
 
     public function edit($id = null, $return = false)
     {
         parent::edit($id);
-        $this->objectUtils->useTables($this, ['Products', 'Users']);
+        $this->objectUtils->useTables($this, ['Products', 'Users', 'SystemUsers']);
         $products = $this->Products->find()->combine('id', 'name')->toArray();
         $users = $this->Users->find()->combine('id', 'fullname')->toArray();
-        $this->set(compact('products', 'users'));
+        $sallers = $this->SystemUsers->getSallerList();
+        $this->set(compact('products', 'users', 'sallers'));
     }
 }

@@ -41,6 +41,11 @@ trait CrudTrait {
         return $data;
     }
 
+    protected function saveRelationshipData($entity)
+    {
+
+    }
+
     protected function save($data = null)
     {
         if ($this->isPost() || $this->isPut()) {
@@ -52,6 +57,8 @@ trait CrudTrait {
             }
             if (empty($entity->errors())) {
                 $result = $this->$table->save($entity);
+
+                $this->saveRelationshipData($result);
 
                 $params = $this->request->params;
                 $controller = $params['controller'];

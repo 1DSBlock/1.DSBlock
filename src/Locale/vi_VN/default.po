@@ -72,6 +72,9 @@ msgstr "Loại người dùng"
 msgid "UserTypes Manager"
 msgstr "Quản lý loại người dùng"
 
+msgid "Users"
+msgstr "Người dùng"
+
 msgid "Customers Manager"
 msgstr "Quản lý người dùng"
 
@@ -119,3 +122,72 @@ msgstr "CHỨC NĂNG CHÍNH"
 
 msgid "SYSTEM"
 msgstr "HỆ THỐNG"
+
+msgid "Fullname"
+msgstr "Họ tên"
+
+msgid "Contract Number"
+msgstr "Số hợp đồng"
+
+msgid "Contract Signature Date"
+msgstr "Ngày ký hợp đồng"
+
+msgid "Contract Sign Date"
+msgstr "Ngày ký hợp đồng"
+
+msgid "Contract Price"
+msgstr "Giá trị hợp đồng"
+
+msgid "Treatment Date"
+msgstr "Thời gian điều trị"
+
+msgid "Treatment Content"
+msgstr "Nội dung điều trị"
+
+msgid "Treatment Result"
+msgstr "Kết quả điều trị"
+
+msgid "Note"
+msgstr "Ghi chú"
+
+msgid "Birthday"
+msgstr "Ngày sinh"
+
+msgid "Phone"
+msgstr "Số điện thoại"
+
+msgid "-- Choose An User --"
+msgstr "-- Chọn người dùng --"
+
+msgid "Saller"
+msgstr "Nhân viên bán hàng"
+
+msgid "Info"
+msgstr "Thông tin cá nhân"
+
+msgid "Info Others"
+msgstr "Thông tin khác"
+
+msgid "Passport"
+msgstr "Hộ chiếu"
+
+msgid "Identity"
+msgstr "CMND"
+
+msgid "Job"
+msgstr "Công việc"
+
+msgid "Company"
+msgstr "Công ty"
+
+msgid "Position"
+msgstr "Chức vụ"
+
+msgid "Address"
+msgstr "Địa chỉ"
+
+msgid "Password"
+msgstr "Mật khẩu"
+
+msgid "Confirm Password"
+msgstr "Xác nhận mật khẩu"

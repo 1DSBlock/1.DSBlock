@@ -9,7 +9,7 @@ class UsersController extends AppAdminController
 
     public $paginate = [
         'limit' => PAGINATE_LIMIT,
-        'contain' => ['UserTypes']
+        'contain' => ['UserTypes', 'UserMedicalHistories.MedicalHistories']
     ];
 
     public function beforeFilter(Event $event)
@@ -34,31 +34,48 @@ class UsersController extends AppAdminController
         return $data;
     }
 
+    protected function saveRelationshipData($entity)
+    {
+        $data = $this->request->data;
+        $this->objectUtils->useTables($this, ['UserMedicalHistories']);
+
+        if ($this->isPut()) {
+            $this->UserMedicalHistories->deleteAll(['user_id' => $entity->id]);
+        }
+
+        $medicals = [];
+        foreach($data['medical_history_id'] as $medical_history_id) {
+            $medicals[] = $this->utils->getEntity('UserMedicalHistory', [
+                'user_id' => $entity->id,
+                'medical_history_id' => $medical_history_id
+            ]);
+        }
+        $this->UserMedicalHistories->saveMany($medicals);
+    }
+
     public function add()
     {
         parent::add();
-        $this->objectUtils->useTables($this, ['UserTypes']);
+        $this->objectUtils->useTables($this, ['UserTypes', 'MedicalHistories']);
         $userTypes = $this->UserTypes->find()->combine('id', 'title')->toArray();
-        $this->set(compact('userTypes'));
+        $medicals = $this->MedicalHistories->find()->combine('id', 'description')->toArray();
+        $this->set(compact('userTypes', 'medicals'));
+    }
+
+    protected function getObject($id)
+    {
+        $table = $this->name;
+        $entity = $this->$table->get($id, ['contain' => ['UserMedicalHistories']]);
+        return $entity;
     }
 
     public function edit($id = null, $return = false)
     {
         parent::edit($id);
-        $this->objectUtils->useTables($this, ['UserTypes']);
+        $this->objectUtils->useTables($this, ['UserTypes', 'MedicalHistories']);
         $userTypes = $this->UserTypes->find()->combine('id', 'title')->toArray();
-        $this->set(compact('userTypes'));
+        $medicals = $this->MedicalHistories->find()->combine('id', 'description')->toArray();
+        $this->set(compact('userTypes', 'medicals'));
     }
 
-    public function autoComplete()
-    {
-        $keyword = $this->request->query('q');
-
-        $data = [
-            ['id' => 0, 'text' => 'enhancement'],
-            ['id' => 1, 'text' => 'bug'],
-            ['id' => 2, 'text' => 'duplicate'],
-        ];
-        return $this->sendAjax(0, json_encode($data));
-    }
 }

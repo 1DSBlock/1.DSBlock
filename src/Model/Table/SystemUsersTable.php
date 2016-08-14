@@ -2,6 +2,7 @@
 // src/Model/Table/SystemsersTable.php
 namespace App\Model\Table;
 
+use App\Model\Entity\Role;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
@@ -52,4 +53,8 @@ class SystemUsersTable extends AppTable
         return $validator;
     }
 
+    public function getSallerList()
+    {
+        return $this->find()->where(['role_id' => Role::ROLE_SALLER])->combine('id', 'fullname')->toArray();
+    }
 }

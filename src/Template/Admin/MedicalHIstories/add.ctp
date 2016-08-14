@@ -1,10 +1,4 @@
 <!-- Content Header (Page header) -->
-<?php
-$this->Html->scriptBlock('$(function () {
-    //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
-  });', ['block' => 'scriptBottom']);
-?>
 <section class="content-header">
 <h1>
 <?php echo __('Medical Histories Manager') ?>
@@ -23,7 +17,7 @@ $this->Html->scriptBlock('$(function () {
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
-                <?php echo $this->Form->textarea('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+                <?php echo $this->Form->textarea('description', ['class' => 'form-control', 'placeholder' => 'Description']); ?>
               </div>
               <!-- /.box-body -->
 

@@ -14,7 +14,7 @@ class UserTreatmentsTable extends AppTable
         $this->belongsTo('Users');
         $this->belongsTo('Owners', [
             'className' => 'SystemUsers',
-            'foreignKey' => 'owner_id',
+            'foreignKey' => 'saller_id',
         ]);
 
         $this->addBehavior('Proffer.Proffer', [
@@ -57,11 +57,15 @@ class UserTreatmentsTable extends AppTable
 
         $validator
         ->requirePresence('treatment_date')
-        ->notEmpty('user_id', 'Please fill this field');
+        ->notEmpty('treatment_date', 'Please fill this field');
 
         $validator
         ->requirePresence('treatment_content')
-        ->notEmpty('user_id', 'Please fill this field');
+        ->notEmpty('treatment_content', 'Please fill this field');
+
+        $validator
+        ->requirePresence('saller_id')
+        ->notEmpty('saller_id', 'Please fill this field');
 
         $validator->provider('proffer', 'Proffer\Model\Validation\ProfferRules');
         $validator

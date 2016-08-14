@@ -53,6 +53,15 @@ echo $this->Html->script('../system/dist/js/pages/user_treatment.js', ['block' =
                     );
                 ?>
                 </div>
+                <div class="form-group"><label for="title"><?= __('Saller') ?></label>
+                <?php
+                echo $this->Form->select(
+                    'saller_id',
+                    $sallers,
+                    ['empty' => __('-- Choose An Saller --'), 'class' => 'form-control select2']
+                    );
+                ?>
+                </div>
                 <?php echo $this->Form->input('note', ['class' => 'textarea form-control', 'placeholder' => __('Note')]); ?>
               </div>
               <!-- /.box-body -->

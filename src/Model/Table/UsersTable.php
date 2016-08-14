@@ -12,6 +12,7 @@ class UsersTable extends AppTable
         parent::initialize($config);
 
         $this->belongsTo('UserTypes');
+        $this->hasMany('UserMedicalHistories');
     }
 
     public function validationDefault(Validator $validator) {

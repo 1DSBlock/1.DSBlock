@@ -2,12 +2,11 @@
 <?php
 echo $this->Html->css('../system/plugins/select2/select2.min', ['block' => 'css']);
 echo $this->Html->script('../system/plugins/select2/select2.full.min', ['block' => 'scriptBottom']);
-echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBottom']);
 echo $this->Html->scriptBlock('$(function () {
-    //bootstrap WYSIHTML5 - text editor
     $("#birthday").datepicker({
       format: "dd/mm/yyyy"
     });
+    $(".select2").select2();
   });', ['block' => 'scriptBottom']);
 ?>
 <section class="content-header">
@@ -28,21 +27,54 @@ echo $this->Html->scriptBlock('$(function () {
             <!-- form start -->
             <?php echo $this->Form->create($entity); ?>
               <div class="box-body">
-              	<?php echo $this->Form->input('fullname', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Fullname']); ?>
-                <?php echo $this->Form->input('email', ['class' => 'form-control', 'type' => 'email', 'placeholder' => 'Email']); ?>
-                <?php echo $this->Form->input('password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
-                <?php echo $this->Form->input('confirm-password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'value' => '']); ?>
-                <div class="form-group"><label for="title"><?= __('UserTypes') ?></label>
-                <?php
-                echo $this->Form->select(
-                    'user_type_id',
-                    $userTypes,
-                    ['class' => 'form-control select2']
-                    );
-                ?>
-                </div>
-                <?php echo $this->Form->input('birthday', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Birthday']); ?>
-                <?php echo $this->Form->input('phone', ['class' => 'form-control', 'type' => 'number', 'placeholder' => 'Phone']); ?>
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#tab_1" data-toggle="tab"><?= __('Info') ?></a></li>
+                  <li><a href="#tab_2" data-toggle="tab"><?= __('Medical History') ?></a></li>
+                  <li><a href="#tab_3" data-toggle="tab"><?= __('Info Others') ?></a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab_1">
+                    <?php echo $this->Form->input('fullname', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Fullname')]); ?>
+                    <?php echo $this->Form->input('email', ['class' => 'form-control', 'type' => 'email', 'placeholder' => 'Email']); ?>
+                    <?php echo $this->Form->input('password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => __('Password'), 'value' => '']); ?>
+                    <?php echo $this->Form->input('confirm-password', ['class' => 'form-control', 'type' => 'password', 'placeholder' => __('Confirm Password'), 'value' => '']); ?>
+                    <div class="form-group"><label for="title"><?= __('UserTypes') ?></label>
+                    <?php
+                    echo $this->Form->select(
+                        'user_type_id',
+                        $userTypes,
+                        ['class' => 'form-control select2']
+                        );
+                    ?>
+                    </div>
+                    <?php echo $this->Form->input('birthday', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Birthday')]); ?>
+                    <?php echo $this->Form->input('phone', ['class' => 'form-control', 'type' => 'number', 'placeholder' => __('Phone')]); ?>
+
+                  </div><!-- /.tab-pane -->
+                  <div class="tab-pane" id="tab_2">
+                    <div class="form-group">
+                    <label for="title"><?= __('Medical History') ?></label>
+                    <?php
+                    echo $this->Form->select(
+                        'medical_history_id',
+                        $medicals,
+                        ['class' => 'form-control select2', 'multiple' => 'multiple', 'style' => 'width: 100%']
+                        );
+                    ?>
+                    </div>
+                  </div><!-- /.tab-pane -->
+                  <div class="tab-pane" id="tab_3">
+                    <?php echo $this->Form->input('passport', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Passport')]); ?>
+                    <?php echo $this->Form->input('identity', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Identity')]); ?>
+                    <?php echo $this->Form->input('job', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Job')]); ?>
+                    <?php echo $this->Form->input('company', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Company')]); ?>
+                    <?php echo $this->Form->input('position', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Position')]); ?>
+                    <?php echo $this->Form->input('address', ['class' => 'form-control', 'type' => 'textarea', 'placeholder' => __('Address')]); ?>
+                  </div><!-- /.tab-pane -->
+                </div><!-- /.tab-content -->
+              </div><!-- nav-tabs-custom -->
+
               </div>
               <!-- /.box-body -->
 

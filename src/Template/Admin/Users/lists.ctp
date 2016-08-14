@@ -1,3 +1,8 @@
+<?php
+$this->Html->scriptBlock('$(function () {
+    $(\'[data-toggle="tooltip"]\').tooltip();
+  });', ['block' => 'scriptBottom']);
+?>
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -39,7 +44,21 @@
                 ?>
                 <tr>
                   <td><?= $item->id; ?></td>
-                  <td><?= $item->fullname; ?></td>
+                  <td>
+                  <?php
+                  $tooltip = '';
+                  if(!empty($item->user_medical_histories)) :
+                    $tooltip = '<b>' . __('Medical History') . ':</b><br />';
+                    $idx = 0;
+                    foreach($item->user_medical_histories as $history) :
+                        $tooltip .= ++$idx . '. ' . $history->medical_history->description . '<br />';
+                    endforeach;
+                  endif;
+                  ?>
+                    <a href="#" data-toggle="tooltip" data-html="true" title="<?= $tooltip; ?>">
+                    <?= $item->fullname; ?>
+                    </a>
+                  </td>
                   <td><?= $item->email; ?></td>
                   <td><?= $item->user_type->title; ?></td>
                   <td><?= $item->birthday_full; ?></td>

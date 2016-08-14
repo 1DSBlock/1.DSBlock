@@ -3,7 +3,7 @@ namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 
-class Saler extends Entity
+class UserMedicalHistory extends Entity
 {
     // Make all fields mass assignable except for primary key field "id".
     protected $_accessible = [
