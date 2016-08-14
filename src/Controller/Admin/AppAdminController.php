@@ -18,7 +18,7 @@ class AppAdminController extends Controller
     protected $utils;
     protected $objectUtils;
 
-    protected $ajaxResponse = [];
+    protected $ajaxResponse = ['status' => 0, 'message' => ''];
 
     protected $keywords = [];
 

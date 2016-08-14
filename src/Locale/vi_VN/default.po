@@ -26,6 +26,9 @@ msgstr "Admin :: Quản lý người dùng"
 msgid "Admin/UserTreatments"
 msgstr "Admin :: Quản lý quá trình chữa bệnh"
 
+msgid "Admin/CustomerServices"
+msgstr "Admin :: Chăm sóc khách hàng"
+
 #### CONTENT ####
 msgid "Add +"
 msgstr "Thêm mới +"
@@ -200,3 +203,6 @@ msgstr "Chuẩn bị mail template"
 
 msgid "Topic"
 msgstr "Chủ đề"
+
+msgid "Birthday of"
+msgstr "Sinh nhật"
