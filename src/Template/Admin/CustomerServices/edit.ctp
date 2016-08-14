@@ -12,7 +12,7 @@ echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBot
 ?>
 <section class="content-header">
 <h1>
-<?= __('Articles') ?>
+<?= __('Customer Service') ?>
 </h1>
 </section>
   <section class="content">
@@ -26,21 +26,12 @@ echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBot
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <?php echo $this->Form->create($entity); ?>
+            <?php echo $this->Form->create($entity, ['type' => 'file']); ?>
               <div class="box-body pad">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-              	<?php echo $this->Form->input('alias', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Alias']); ?>
-              	<div class="form-group"><label for="title">Category</label>
-              	<?php
-                echo $this->Form->select(
-                    'article_category_id',
-                    $categories,
-                    ['empty' => 'None', 'class' => 'form-control select2']
-                    );
-                ?>
-                </div>
-                <?php echo $this->Form->input('description', ['error' => false, 'class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
-                <?php echo $this->Form->error('description'); ?>
+                <?php echo $this->Form->input('topic', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Topic')]); ?>
+                <?php echo $this->Form->input('template', ['error' => false, 'class' => 'textarea form-control', 'placeholder' => 'Template', 'style' => 'height: 400px']); ?>
+                <?php echo $this->Form->error('template'); ?>
+                <?php echo $this->Form->input('attach', ['type' => 'file']); ?>
               </div>
               <!-- /.box-body -->
 

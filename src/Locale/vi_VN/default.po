@@ -191,3 +191,12 @@ msgstr "Mật khẩu"
 
 msgid "Confirm Password"
 msgstr "Xác nhận mật khẩu"
+
+msgid "Customer Service"
+msgstr "Chăm sóc khách hàng"
+
+msgid "Template Prepare"
+msgstr "Chuẩn bị mail template"
+
+msgid "Topic"
+msgstr "Chủ đề"

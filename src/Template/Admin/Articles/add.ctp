@@ -38,7 +38,8 @@ echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBot
                     );
                 ?>
                 </div>
-                <?php echo $this->Form->input('description', ['class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+                <?php echo $this->Form->input('description', ['error' => false, 'class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
+                <?php echo $this->Form->error('description'); ?>
               </div>
               <!-- /.box-body -->
 

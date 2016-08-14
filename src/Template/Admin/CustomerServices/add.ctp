@@ -8,11 +8,10 @@ echo $this->Html->scriptBlock('$(function () {
     $(".textarea").wysihtml5();
   });', ['block' => 'scriptBottom']);
 echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBottom']);
-;
 ?>
 <section class="content-header">
 <h1>
-<?= __('Articles') ?>
+<?= __('Customer Service') ?>
 </h1>
 </section>
   <section class="content">
@@ -22,25 +21,16 @@ echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBot
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><?php echo __('Edit'); ?></h3>
+              <h3 class="box-title"><?php echo __('Add new'); ?></h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <?php echo $this->Form->create($entity); ?>
+            <?php echo $this->Form->create($entity, ['type' => 'file']); ?>
               <div class="box-body pad">
-              	<?php echo $this->Form->input('title', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Title']); ?>
-              	<?php echo $this->Form->input('alias', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Alias']); ?>
-              	<div class="form-group"><label for="title">Category</label>
-              	<?php
-                echo $this->Form->select(
-                    'article_category_id',
-                    $categories,
-                    ['empty' => 'None', 'class' => 'form-control select2']
-                    );
-                ?>
-                </div>
-                <?php echo $this->Form->input('description', ['error' => false, 'class' => 'textarea form-control', 'placeholder' => 'Description']); ?>
-                <?php echo $this->Form->error('description'); ?>
+              	<?php echo $this->Form->input('topic', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Topic')]); ?>
+                <?php echo $this->Form->input('template', ['error' => false, 'class' => 'textarea form-control', 'placeholder' => 'Template', 'style' => 'height: 400px']); ?>
+                <?php echo $this->Form->error('template'); ?>
+                <?php echo $this->Form->input('attach', ['type' => 'file']); ?>
               </div>
               <!-- /.box-body -->
 
@@ -48,7 +38,6 @@ echo $this->Html->scriptBlock('$(".select2").select2();', ['block' => 'scriptBot
                 <button type="submit" class="btn btn-primary"><?php echo __('Save'); ?></button>
                 <button type="button" class="btn btn-default back"><?php echo __('Back'); ?></button>
               </div>
-              <?php echo $this->Form->hidden('id'); ?>
             <?php echo $this->Form->end();?>
           </div>
           <!-- /.box -->

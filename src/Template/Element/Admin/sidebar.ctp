@@ -83,6 +83,26 @@ var controller = '<?= \Cake\Utility\Inflector::tableize($params['controller']); 
             </li>
           </ul>
         </li>
+        <li class="treeview customer_services">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span><?php echo __('Customer Service'); ?></span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class='customer_services'>
+              <a href="<?php echo $this->Url->build(['controller' => 'customer_services', 'action' => 'lists']); ?>">
+                <i class="fa fa-users"></i> <span><?php echo __('Template Prepare'); ?></span>
+              </a>
+            </li>
+            <li class='customer_services'>
+              <a href="<?php echo $this->Url->build(['controller' => 'customer_services', 'action' => 'birthday']); ?>">
+                <i class="fa fa-users"></i> <span><?php echo __('Calendar'); ?></span>
+              </a>
+            </li>
+          </ul>
+        </li>
         <li class="header"><?php echo __('SYSTEM') ?></li>
         <li class='pages'>
           <a href="<?php echo $this->Url->build(['controller' => 'pages', 'action' => 'lists']); ?>">

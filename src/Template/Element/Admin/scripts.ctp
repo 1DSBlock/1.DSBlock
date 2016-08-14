@@ -1,6 +1,6 @@
 
 <!-- jQuery 2.2.3 -->
-<?php 
+<?php
 echo $this->Html->script('../system/plugins/jQuery/jquery-2.2.3.min');
 ?>
 <!-- jQuery UI 1.11.4 -->
@@ -11,7 +11,7 @@ echo $this->Html->script('../system/plugins/jQuery/jquery-2.2.3.min');
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="//rawgit.com/saribe/eModal/master/dist/eModal.min.js"></script>
-<?php 
+<?php
 // <!-- Bootstrap 3.3.6 -->
 echo $this->Html->script('../system/bootstrap/js/bootstrap.min');
 // <!-- Morris.js charts -->
@@ -26,7 +26,7 @@ echo $this->Html->script('../system/plugins/knob/jquery.knob');
 ?>
 <!-- daterangepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<?php 
+<?php
 echo $this->Html->script('../system/plugins/daterangepicker/daterangepicker');
 // <!-- datepicker -->
 echo $this->Html->script('../system/plugins/datepicker/bootstrap-datepicker');
