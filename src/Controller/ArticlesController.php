@@ -8,7 +8,7 @@ class ArticlesController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['view', 'sendFile']);
+        $this->Auth->allow(['view', 'sendFile', 'download']);
     }
 
     public function view() {
