@@ -457,7 +457,7 @@ ALTER TABLE `medical_histories`
 --
 ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`),
-  ADD FULLTEXT KEY `name_2` (`name`);
+  ADD KEY `name_2` (`name`);
 
 --
 -- Indexes for table `page_articles`
