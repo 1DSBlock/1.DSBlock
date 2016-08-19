@@ -6,3 +6,4 @@ tmp/cache/persistent/
 logs/
 webroot/upload/forms
 webroot/upload/products
+/vendor/
