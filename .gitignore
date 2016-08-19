@@ -3,7 +3,6 @@
 .settings/org.eclipse.wst.common.project.facet.core.xml
 tmp/cache/models/
 tmp/cache/persistent/
-app.php
 logs/
 webroot/upload/forms
 webroot/upload/products
