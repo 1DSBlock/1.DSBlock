@@ -53,7 +53,7 @@ var controller = '<?= \Cake\Utility\Inflector::tableize($params['controller']); 
           </a>
         </li>
 
-        <li class="treeview medical_histories user_types users user_treatments">
+        <li class="treeview medical_histories user_types users user_treatments user_groups">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span><?php echo __('Customers'); ?></span>
             <span class="pull-right-container">
@@ -69,6 +69,11 @@ var controller = '<?= \Cake\Utility\Inflector::tableize($params['controller']); 
             <li class='user_types'>
               <a href="<?php echo $this->Url->build(['controller' => 'user_types', 'action' => 'lists']); ?>">
                 <i class="fa fa-users"></i> <span><?php echo __('UserTypes Manager'); ?></span>
+              </a>
+            </li>
+            <li class='user_groups'>
+              <a href="<?php echo $this->Url->build(['controller' => 'user_groups', 'action' => 'lists']); ?>">
+                <i class="fa fa-users"></i> <span><?php echo __('UserGroups Manager'); ?></span>
               </a>
             </li>
             <li class='users'>

@@ -36,21 +36,11 @@ class UsersController extends AppAdminController
 
     protected function saveRelationshipData($entity)
     {
+        $this->loadComponent('UserRelationship');
+
         $data = $this->request->data;
-        $this->objectUtils->useTables($this, ['UserMedicalHistories']);
-
-        if ($this->isPut()) {
-            $this->UserMedicalHistories->deleteAll(['user_id' => $entity->id]);
-        }
-
-        $medicals = [];
-        foreach($data['medical_history_id'] as $medical_history_id) {
-            $medicals[] = $this->utils->getEntity('UserMedicalHistory', [
-                'user_id' => $entity->id,
-                'medical_history_id' => $medical_history_id
-            ]);
-        }
-        $this->UserMedicalHistories->saveMany($medicals);
+        $this->UserRelationship->updateUserMedicalHistories($data);
+        $this->UserRelationship->updateMedicalAssessment($data);
     }
 
     public function add()
@@ -78,4 +68,33 @@ class UsersController extends AppAdminController
         $this->set(compact('userTypes', 'medicals'));
     }
 
+    public function import()
+    {
+
+    }
+
+    public function searchDetail()
+    {
+        $table = $this->name;
+
+        $keyword = $this->request->data('keyword');
+        if(!empty($keyword)) {
+            $this->paginate += [
+                'conditions' => [
+                    'OR' => []
+                ]
+            ];
+            foreach($this->keywords as $element) {
+                $split = explode('.', $element);
+
+                $key = $element . ' LIKE';
+                if(count($split) < 2) {
+                    $key = $table . '.' . $element . ' LIKE';
+                }
+
+                $this->paginate['conditions']['OR'][$key] = '%' . $keyword . '%';
+            }
+        }
+        $this->set('rows', $this->paginate($this->$table));
+    }
 }

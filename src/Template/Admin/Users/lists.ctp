@@ -16,10 +16,11 @@ $this->Html->scriptBlock('$(function () {
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"><?= __('Customers Manager') ?></h3>
-              <?php echo $this->element('Admin/search'); ?>
+              <?php echo $this->element('Admin/search_detail_user'); ?>
             </div>
             <div class="box-header">
             <button type="button" class="btn btn-primary" id="addNew"><?php echo __('Add +'); ?></button>
+            <button type="button" class="btn btn-primary" id="import"><?php echo __('Import'); ?></button>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">

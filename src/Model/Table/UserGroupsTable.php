@@ -1,11 +1,11 @@
 <?php
-// src/Model/Table/UserTypesTable.php
+// src/Model/Table/UserGroupsTable.php
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class UserTypesTable extends AppTable
+class UserGroupsTable extends AppTable
 {
     public function initialize(array $config)
     {

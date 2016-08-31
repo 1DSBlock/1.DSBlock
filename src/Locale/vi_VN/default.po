@@ -18,10 +18,13 @@ msgid "Admin/MedicalHistories"
 msgstr "Admin :: Quản lý bệnh sử"
 
 msgid "Admin/UserTypes"
-msgstr "Admin :: Quản lý loại người dùng"
+msgstr "Admin :: Quản lý loại khách hàng"
+
+msgid "Admin/UserGroups"
+msgstr "Admin :: Quản lý nhóm xã hội"
 
 msgid "Admin/Users"
-msgstr "Admin :: Quản lý người dùng"
+msgstr "Admin :: Quản lý khách hàng"
 
 msgid "Admin/UserTreatments"
 msgstr "Admin :: Quản lý quá trình chữa bệnh"
@@ -70,19 +73,25 @@ msgid "Medical Histories Manager"
 msgstr "Quản lý bệnh sử"
 
 msgid "UserTypes"
-msgstr "Loại người dùng"
+msgstr "Loại khách hàng"
 
 msgid "UserTypes Manager"
-msgstr "Quản lý loại người dùng"
+msgstr "Quản lý loại khách hàng"
+
+msgid "UserGroups"
+msgstr "Nhóm xã hội"
+
+msgid "UserGroups Manager"
+msgstr "Quản lý nhóm xã hội"
 
 msgid "Users"
-msgstr "Người dùng"
+msgstr "khách hàng"
 
 msgid "Customers Manager"
-msgstr "Quản lý người dùng"
+msgstr "Quản lý khách hàng"
 
 msgid "Customers"
-msgstr "Người dùng"
+msgstr "Khách hàng"
 
 msgid "Questions Manager"
 msgstr "Quản lý câu hỏi thường gặp"
@@ -129,6 +138,9 @@ msgstr "HỆ THỐNG"
 msgid "Fullname"
 msgstr "Họ tên"
 
+msgid "Age"
+msgstr "Tuổi"
+
 msgid "Contract Number"
 msgstr "Số hợp đồng"
 
@@ -160,7 +172,7 @@ msgid "Phone"
 msgstr "Số điện thoại"
 
 msgid "-- Choose An User --"
-msgstr "-- Chọn người dùng --"
+msgstr "-- Chọn khách hàng --"
 
 msgid "Saller"
 msgstr "Nhân viên bán hàng"
