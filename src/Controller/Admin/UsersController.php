@@ -39,17 +39,22 @@ class UsersController extends AppAdminController
         $this->loadComponent('UserRelationship');
 
         $data = $this->request->data;
-        $this->UserRelationship->updateUserMedicalHistories($data);
+        debug($data);
+        // $this->UserRelationship->updateUserMedicalHistories($data);
         $this->UserRelationship->updateMedicalAssessment($data);
     }
 
     public function add()
     {
+        $this->loadComponent('MedicalAssessment');
+        $this->set($this->MedicalAssessment->loadDataToView());
+
         parent::add();
         $this->objectUtils->useTables($this, ['UserTypes', 'MedicalHistories']);
         $userTypes = $this->UserTypes->find()->combine('id', 'title')->toArray();
         $medicals = $this->MedicalHistories->find()->combine('id', 'description')->toArray();
         $this->set(compact('userTypes', 'medicals'));
+        
     }
 
     protected function getObject($id)

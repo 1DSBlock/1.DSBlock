@@ -32,6 +32,7 @@ echo $this->Html->scriptBlock('$(function () {
                   <li class="active"><a href="#tab_1" data-toggle="tab"><?= __('Info') ?></a></li>
                   <li><a href="#tab_2" data-toggle="tab"><?= __('Medical History') ?></a></li>
                   <li><a href="#tab_3" data-toggle="tab"><?= __('Info Others') ?></a></li>
+                  <li><a href="#tab_4" data-toggle="tab"><?= __('Medical Assessment') ?></a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="tab_1">
@@ -61,7 +62,7 @@ echo $this->Html->scriptBlock('$(function () {
                         $medicals,
                         ['class' => 'form-control select2', 'multiple' => 'multiple', 'style' => 'width: 100%']
                         );
-                    ?>
+                    ?>                                          
                     </div>
                   </div><!-- /.tab-pane -->
                   <div class="tab-pane" id="tab_3">
@@ -72,8 +73,28 @@ echo $this->Html->scriptBlock('$(function () {
                     <?php echo $this->Form->input('position', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Position')]); ?>
                     <?php echo $this->Form->input('address', ['class' => 'form-control', 'type' => 'textarea', 'placeholder' => __('Address')]); ?>
                   </div><!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="tab_4">
+                    <div class="nav-tabs-custom">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_4_1" data-toggle="tab"><?= __('Tab 1') ?></a></li>
+                        <li><a href="#tab_4_2" data-toggle="tab"><?= __('Tab 2') ?></a></li>
+                        <li><a href="#tab_4_3" data-toggle="tab"><?= __('Tab 3') ?></a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="tab_4_1">                          
+                          <ul>
+                          <?php foreach ($familyHistory as $key=>$name): ?>
+                            <?php echo $this->Form->input($key, ['type' => 'checkbox', 'value' => $name]); ?>                            
+                          <?php endforeach; ?>
+                          </ul> 
+                        </div><!-- /.tab-pane -->
+                      </div><!-- /.tab-content -->
+                    </div><!-- nav-tabs-custom -->
+
+                  </div><!-- /.tab-pane -->
                 </div><!-- /.tab-content -->
-              </div><!-- nav-tabs-custom -->
+                    </div><!-- nav-tabs-custom -->
 
               </div>
               <!-- /.box-body -->
