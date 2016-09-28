@@ -85,7 +85,7 @@ echo $this->Html->scriptBlock('$(function () {
                         <div class="tab-pane active" id="tab_4_1">                          
                           <ul>
                           <?php foreach ($familyHistory as $key=>$name): ?>
-                            <?php echo $this->Form->input($key, ['type' => 'checkbox', 'value' => $name]); ?>                            
+                            <?php echo $this->Form->input('familyHisory['. $key .']', ['type' => 'checkbox']); ?>                            
                           <?php endforeach; ?>
                           </ul> 
                         </div><!-- /.tab-pane -->
