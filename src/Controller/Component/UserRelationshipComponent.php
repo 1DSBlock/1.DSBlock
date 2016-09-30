@@ -28,12 +28,21 @@ class UserRelationshipComponent extends AppComponent
     public function updateMedicalAssessment(array $data, $entity)
     {
         $this->objectUtils->useTables($this, ['MedicalAssessments']);
+        $familyHistories = $this->saveFamilyHistory($data);
+        $pastMedicalHistory = $this->savePastMedicalHistory($data);
+        $assessments = [];    
+        $assessments = $this->utils->getEntity('UserMedicalHistory', [
+            'user_id' => $entity->id,
+            'current_complaints' => $entity->$current_complaints,
+            'current_medication' => $entity->$current_medication,
+            'pastMedicalHistory' => $pastMedicalHistory,
+            'family_history' => $familyHistories
+        ]);        
+        $this->MedicalAssessments->save($assessments);        
+    }
 
-        // if ($this->isPut()) {
-        //     $this->MedicalAssessments->deleteAll(['user_id' => $entity->id]);
-        // }
-        $family_history = [];
-        $assessments = [];
+    public function saveFamilyHistory(array $data)
+    {
         $familyHistories = MedicalAssessmentsTable::initFamilyHistory;
 
         $saveData = [];
@@ -44,30 +53,37 @@ class UserRelationshipComponent extends AppComponent
           ];
           if(!empty($familyHistories['extension']['type'])) {
            $k = $familyHistories['extension']['type'];
-           // $saveData[$key][$k] = ; <= input data
+           $familyHistories[$key][$k] = $data['familyHistory[$key][extension][type]']; 
           } elseif(!empty($familyHistories['extension']['when'])) {
            $k = $familyHistories['extension']['when'];
-           // $saveData[$key][$k] = ; <= input data
+           // $familyHistories[$key][$k] = ; <= input data
           }
          
         }
-    
-        $assessments = $this->utils->getEntity('UserMedicalHistory', [
-            'user_id' => $entity->id,
-            'family_history' => $familyHistories
-        ]);
-        
-        $this->MedicalAssessments->save($assessments);
         $saveData = json_encode($saveData);
-        /*$medicalData = $data['MedicalAssessment'];*/
+        return $saveData;
     }
 
-    public function loadDataToView()
+    public function savePastMedicalHistory(array $data)
     {
-        $this->objectUtils->useTables($this, ['MedicalAssessments']);
-        
-        return [
-            'familyHistory' => MedicalAssessments::initFamilyHistory
-            ];
+        $pastMedicalHistory = MedicalAssessmentsTable::initPastMedicalHistory;
+
+        $saveData = [];
+        foreach($data['familyHisory'] as $key => $value) {
+
+          $saveData[$key] = [
+           'value' => !empty($value) ? 1: 0
+          ];
+          if(!empty($pastMedicalHistory['extension']['type'])) {
+           $k = $pastMedicalHistory['extension']['type'];
+           // $familyHistories[$key][$k] = ; <= input data
+          } elseif(!empty($pastMedicalHistory['extension']['when'])) {
+           $k = $pastMedicalHistory['extension']['when'];
+           // $familyHistories[$key][$k] = ; <= input data
+          }
+         
+        }
+        $saveData = json_encode($saveData);
+        return $saveData;
     }
 }

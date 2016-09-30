@@ -9,7 +9,16 @@ class MedicalAssessmentComponent extends AppComponent
         $this->objectUtils->useTables($this, ['MedicalAssessments']);
         
         return [
-            'familyHistory' => MedicalAssessmentsTable::initFamilyHistory
+            'familyHistory' => MedicalAssessmentsTable::initFamilyHistory,
+            'pastMedicalHistory' => MedicalAssessmentsTable::initPastMedicalHistory,
+            'urinologicalHistoryMale' => MedicalAssessmentsTable::initUrinologicalHistoryMale,
+            'urinologicalHistoryFemale' => MedicalAssessmentsTable::initUrinologicalHistoryFemale,
+            'sleep' => MedicalAssessmentsTable::initSleep,
+            'knowAllergies' => MedicalAssessmentsTable::initKnowAllergies,
+            'gastroIntestinalProblems' => MedicalAssessmentsTable::initGastroIntestinalProblems,
+            'locomotorSystemProblems' => MedicalAssessmentsTable::initLocomotorSystemProblems,
+            'regularExercise' => MedicalAssessmentsTable::initRegularExercise,
+            'emotionalWellBeing' => MedicalAssessmentsTable::initEmotionalWellBeing            
             ];
     }
 }

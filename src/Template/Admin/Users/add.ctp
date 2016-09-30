@@ -82,12 +82,110 @@ echo $this->Html->scriptBlock('$(function () {
                         <li><a href="#tab_4_3" data-toggle="tab"><?= __('Tab 3') ?></a></li>
                       </ul>
                       <div class="tab-content">
-                        <div class="tab-pane active" id="tab_4_1">                          
-                          <ul>
-                          <?php foreach ($familyHistory as $key=>$name): ?>
-                            <?php echo $this->Form->input('familyHisory['. $key .']', ['type' => 'checkbox']); ?>                            
-                          <?php endforeach; ?>
-                          </ul> 
+                        <div class="tab-pane active" id="tab_4_1"> 
+                          <?php echo $this->Form->input('current_complaints', ['class' => 'form-control', 'type' => 'textarea', 'placeholder' => __('Các vấn đề về y tế và bệnh đang cần được lưu tâm')]); ?>
+                          <?php echo $this->Form->input('current_medication', ['class' => 'form-control', 'type' => 'textarea', 'placeholder' => __('Thuốc đang sử dụng - tên, liều lượng, cách sử dụng')]); ?>
+
+                          <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Family history - Indicate which relative(s) and give details</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($familyHistory as $key=>$value): ?>
+                                <?php echo $this->Form->input('familyHistory['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>
+                                <?php if (!empty($familyHistory[$key]['extension']['type'])): ?>
+                                  <?php echo $this->Form->input('familyHistory['. $key .'][extension][type]', ['class' => 'form-control', 'type' => 'text']); ?>                               
+                                <?php endif; ?>
+                                                          
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->
+
+                           <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Past Medical history (Bệnh đã từng mắc)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($pastMedicalHistory as $key=>$name): ?>
+                                <?php echo $this->Form->input('pastMedicalHistory['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->                        
+                          
+                        </div><!-- /.tab-pane -->
+                        <div class="tab-pane " id="tab_4_2"> 
+                          <?php echo $this->Form->input('previous_surgical_operations', ['class' => 'form-control', 'type' => 'text', 'placeholder' => __('Please specify (Ghi rõ):')]); ?>
+
+
+                          <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Gynecological history for Female (Vấn đề phụ khoa đối với nữ giới)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($urinologicalHistoryFemale as $key=>$name): ?>
+                                <?php echo $this->Form->input('urinologicalHistoryFemale['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->
+
+                           <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Urinological history for male(Vấn đề tiết niệu đối với nam giới)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($urinologicalHistoryMale as $key=>$name): ?>
+                                <?php echo $this->Form->input('urinologicalHistoryMale['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->                        
+                          
+                        </div><!-- /.tab-pane -->
+                        <div class="tab-pane " id="tab_4_3">                           
+                          <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Sleep (Giấc ngủ)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($sleep as $key=>$name): ?>
+                                <?php echo $this->Form->input('sleep['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->
+
+                           <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Known allergies (Dị ứng trước đây)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($knowAllergies as $key=>$name): ?>
+                                <?php echo $this->Form->input('knowAllergies['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->  
+
+                           <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Gastro - Intestinal problems (Vấn đề về hệ thống vận động)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($pastMedicalHistory as $key=>$name): ?>
+                                <?php echo $this->Form->input('pastMedicalHistory['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->                       
+                          
+                          <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">locomotor system problems (Vấn đề về hệ thống vận động)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($locomotorSystemProblems as $key=>$name): ?>
+                                <?php echo $this->Form->input('locomotorSystemProblems['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box --> 
+
+                           <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Regular exercise (tập thể dục đều đặn)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($regularExercise as $key=>$name): ?>
+                                <?php echo $this->Form->input('regularExercise['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box -->                            
+
+                           <div class="box box-info">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Emotional well-being(Cảm xúc)</h3>
+                            </div><!-- /.box-header -->
+                              <?php foreach ($emotionalWellBeing as $key=>$name): ?>
+                                <?php echo $this->Form->input('emotionalWellBeing['. $key .']', ['type' => 'checkbox', 'label' => $key]); ?>                            
+                              <?php endforeach; ?>                            
+                           </div><!-- /.box --> 
                         </div><!-- /.tab-pane -->
                       </div><!-- /.tab-content -->
                     </div><!-- nav-tabs-custom -->

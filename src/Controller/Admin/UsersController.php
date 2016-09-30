@@ -39,9 +39,9 @@ class UsersController extends AppAdminController
         $this->loadComponent('UserRelationship');
 
         $data = $this->request->data;
-        
+
         // $this->UserRelationship->updateUserMedicalHistories($data);
-        $this->UserRelationship->updateMedicalAssessment($data);
+        $this->UserRelationship->updateMedicalAssessment($data, $entity);
     }
 
     public function add()
