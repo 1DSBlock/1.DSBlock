@@ -14,9 +14,9 @@ class MedicalAssessmentComponent extends AppComponent
             'urinologicalHistoryMale' => MedicalAssessmentsTable::initUrinologicalHistoryMale,
             'urinologicalHistoryFemale' => MedicalAssessmentsTable::initUrinologicalHistoryFemale,
             'sleep' => MedicalAssessmentsTable::initSleep,
-            'knowAllergies' => MedicalAssessmentsTable::initKnowAllergies,
-            'gastroIntestinalProblems' => MedicalAssessmentsTable::initGastroIntestinalProblems,
-            'locomotorSystemProblems' => MedicalAssessmentsTable::initLocomotorSystemProblems,
+            'knowAllergie' => MedicalAssessmentsTable::initKnowAllergies,
+            'gastroIntestinalProblem' => MedicalAssessmentsTable::initGastroIntestinalProblems,
+            'locomotorSystemProblem' => MedicalAssessmentsTable::initLocomotorSystemProblems,
             'regularExercise' => MedicalAssessmentsTable::initRegularExercise,
             'emotionalWellBeing' => MedicalAssessmentsTable::initEmotionalWellBeing            
             ];

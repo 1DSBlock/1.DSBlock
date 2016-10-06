@@ -54,6 +54,7 @@ class MedicalAssessmentsTable extends AppTable
         'mental_diseases' => ['name' => 'Mental diseases (Bệnh tâm thần)'],
         'heart_diseases' => ['name' => 'Heart diseases (Bệnh tim)']
     ];
+
     const initUrinologicalHistoryMale = [        
         'frequent_urination' => ['name' => 'Frequent urination (Thường xuyên đi tiểu)'],
         'urination_at_night' => ['name' => 'Urination at night (Đi tiểu vào ban đêm)'],
@@ -64,7 +65,15 @@ class MedicalAssessmentsTable extends AppTable
         'prostate_problems_please_specify' => ['name' => 'Prostate problems please specify (Vấn đề về tuyến tiền liệt)', 'extension' => ['note' => 'Note (Ghi rõ)']]        
     ];
     const initUrinologicalHistoryFemale = [        
-        'cancer' => ['name' => 'Cancer (Ung)'],
+        'difficulty_getting_pregnant' => ['name' => 'Difficulty getting pregnant (Khó khăn trong việc có thai)'],
+        'infertility_treatment' => ['name' => 'Infertility treatment (Điều trị vô sinh)'],
+        'oral_contraception' => ['name' => 'Oral contraception (Sử dụng thuốc tránh thai)'],
+        'frequent_urination' => ['name' => 'Frequent urination (Thường xuyên đi tiểu)'],
+        'urination_at_night' => ['name' => 'Urination at night (Đi tiểu vào ban đêm)'],
+        'urination_incontinence' => ['name' => 'Urination incontinence (Đi tiểu không kiểm soát được)'],
+        'sexual_desire' => ['name' => 'Sexual desire (Ham muốn tình dục)', 'extension' => ['note' => 'Note (Ghi chú)']],
+        'pain_during_sexual_intercourse' => ['name' => 'Pain during sexual intercourse (Bị đau trong lúc giao hợp)'],
+        
 
     ]; 
 

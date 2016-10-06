@@ -39,7 +39,6 @@ class UsersController extends AppAdminController
         $this->loadComponent('UserRelationship');
 
         $data = $this->request->data;
-
         // $this->UserRelationship->updateUserMedicalHistories($data);
         $this->UserRelationship->updateMedicalAssessment($data, $entity);
     }
@@ -66,6 +65,9 @@ class UsersController extends AppAdminController
 
     public function edit($id = null, $return = false)
     {
+        $this->loadComponent('MedicalAssessment');
+        $this->set($this->MedicalAssessment->loadDataToView());
+        
         parent::edit($id);
         $this->objectUtils->useTables($this, ['UserTypes', 'MedicalHistories']);
         $userTypes = $this->UserTypes->find()->combine('id', 'title')->toArray();
