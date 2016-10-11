@@ -13,6 +13,7 @@ class UsersTable extends AppTable
 
         $this->belongsTo('UserTypes');
         $this->hasMany('UserMedicalHistories');
+        $this->hasOne('MedicalAssessments');
     }
 
     public function validationDefault(Validator $validator) {

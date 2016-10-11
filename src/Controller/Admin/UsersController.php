@@ -59,12 +59,14 @@ class UsersController extends AppAdminController
     protected function getObject($id)
     {
         $table = $this->name;
-        $entity = $this->$table->get($id, ['contain' => ['UserMedicalHistories']]);
-        return $entity;
+        $entity = $this->$table->get($id, ['contain' => ['UserMedicalHistories', 'MedicalAssessments']]);
+        debug($entity);
+        return $entity;        
     }
 
     public function edit($id = null, $return = false)
     {
+
         $this->loadComponent('MedicalAssessment');
         $this->set($this->MedicalAssessment->loadDataToView());
         
@@ -72,6 +74,7 @@ class UsersController extends AppAdminController
         $this->objectUtils->useTables($this, ['UserTypes', 'MedicalHistories']);
         $userTypes = $this->UserTypes->find()->combine('id', 'title')->toArray();
         $medicals = $this->MedicalHistories->find()->combine('id', 'description')->toArray();
+        // $assessments = $this->MedicalAssessments->find()->combine('id', 'current_complaints', 'current_medication', 'previous_surgical_operations', 'previous_aesthtic_treatments', 'othera_aesthtic_treatments', 'inological_history_male', 'family_history', 'regular_exercise', 'past_medical_history', 'locomotor_system_problem', 'gastro_intestinal_problem', 'know_allergies', 'sleep', 'urinological_history_female', 'emotional_well_being')->toArray();
         $this->set(compact('userTypes', 'medicals'));
     }
 

@@ -11,7 +11,7 @@ class MedicalAssessmentsTable extends AppTable
     {
         parent::initialize($config);
 
-        // $this->belongTo('Users');
+        $this->belongsTo('Users');
         
     }
 
