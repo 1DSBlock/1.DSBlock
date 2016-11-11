@@ -13,7 +13,7 @@
 	</div>
 	<div class="header">
 		<div class="container">
-			<a href="/" class="logo"><img src="/img/logo.png" alt="logo">LIỆU PHÁP TẾ BÀO TƯƠI TẠI CHLB ĐỨC Trẻ hơn – Khoẻ hơn – Giàu có hơn
+			<a href="/" class="logo"><?php echo $this->Html->image('logo.png', ['alt' => 'logo']);?>LIỆU PHÁP TẾ BÀO TƯƠI TẠI CHLB ĐỨC Trẻ hơn – Khoẻ hơn – Giàu có hơn
 			</a>
 			<ul class="navmenu">
 				<li class=""><a href="<?= $this->Url->build($pages['introductions']->page_url->route_link) ?>">GIỚI THIỆU</a><span></span></li>
@@ -43,7 +43,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="/" class="navbar-brand"><img src="/img/logo.png" alt="logo"></a>
+			<a href="/" class="navbar-brand"><?php echo $this->Html->image('logo.png', ['alt' => 'logo']);?></a>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 				<li class=""><a href="<?= $this->Url->build($pages['introductions']->page_url->route_link) ?>">GIỚI THIỆU</a><span></span></li>
 				<li class=""><a href="<?= $this->Url->build($pages['forms']->page_url->route_link) ?>">FORMS</a><span></span></li>
