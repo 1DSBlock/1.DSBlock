@@ -1,7 +1,7 @@
 <div class="footer">
 			<div class="container">
 		<div class="logo_ft">
-			<a href="/" class="logo"><img src="/img/logo.png" alt="logo">
+			<a href="/" class="logo"><?php echo $this->Html->image('logo.png', ['alt' => 'logo']);?>
 				<br>LIỆU PHÁP TẾ BÀO TƯƠI TẠI CHLB ĐỨC Trẻ hơn – Khoẻ hơn – Giàu có hơn
 			</a>
 			<div class="mxh">
@@ -30,7 +30,7 @@
 
 	<div class="clearfix"></div>
 </div>
-<div id="goTop" class="gotoppage"><img src="/img/gotop.png" alt="Lên đầu trang" /></div>
+<div id="goTop" class="gotoppage"><?php echo $this->Html->image('gotop.png', ['alt' => 'Lên đầu trang']);?></div>
 
 <?php
 echo $this->Html->script('jquery.min');
